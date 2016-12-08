@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo06</title>
+</head>
+<body>
+
+<p>
+<h1>验证输入: 数字</h1>
+</p>
+
+<input id="numberEdit" type="text"/>
+
+<script>
+    function validate() {
+        var numberEditValue = document.getElementById("numberEdit").value;
+        if ("" == numberEditValue || isNaN(numberEditValue)) {
+            alert("Only Numeric")
+        } else {
+            alert("OK")
+        }
+    }
+</script>
+
+<button type="button" onclick="validate()">验证</button>
+
+</body>
+</html>

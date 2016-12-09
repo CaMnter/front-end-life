@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo11</title>
+</head>
+<body>
+
+<p>
+<h1>JavaScript 数组</h1>
+</p>
+
+<script>
+    var a1 = new Array();
+    a1[0] = "Save";
+    a1[1] = "you";
+    a1[2] = "from";
+    a1[3] = "anything";
+
+    var a2 = new Array("Save", "you", "from", "anything");
+    var a3 = ["Save", "you", "from", "anything"];
+
+    for (var i = 0; i < a1.length; i++) {
+        if (i != a1.length - 1) {
+            document.write(a1[i] + "<br>");
+        } else {
+            document.write(a1[i] + "<br><br><br>");
+        }
+    }
+
+    for (var i = 0; i < a2.length; i++) {
+        if (i != a2.length - 1) {
+            document.write(a2[i] + "<br>");
+        } else {
+            document.write(a2[i] + "<br><br><br>");
+        }
+    }
+
+    for (var i = 0; i < a3.length; i++) {
+        if (i != a3.length - 1) {
+            document.write(a3[i] + "<br>");
+        } else {
+            document.write(a3[i] + "<br><br><br>");
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

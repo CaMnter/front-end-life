@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo20</title>
+</head>
+<body>
+
+<p>
+<h1>JavaScript Visibility</h1>
+</p>
+
+<h1 id="targetText">Save you from anything</h1>
+
+<script>
+    function reverseVisibility(field) {
+        with (field) {
+            style.visibility = style.visibility == "hidden" ? "visible" : "hidden";
+        }
+    }
+</script>
+
+<button type="button" onclick="reverseVisibility(document.getElementById('targetText'))">反转显示
+</button>
+
+</body>
+</html>

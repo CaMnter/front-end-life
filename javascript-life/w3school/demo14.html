@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo14</title>
+    <!--
+        for - 循环代码块一定的次数
+        for/in - 循环遍历对象的属性
+        while - 当指定的条件为 true 时循环指定的代码块
+        do/while - 同样当指定的条件为 true 时循环指定的代码块
+    -->
+</head>
+<body>
+
+<p>
+<h1>JavaScript 循环</h1>
+</p>
+
+<script>
+    var camnter = {
+        fullName: "CaMnter",
+        sign: "Save you from anything"
+    };
+    var save = ["Save", "you", "from", "anything"];
+    for (var i = 0; i < save.length; i++) {
+        if (i == save.length - 1) {
+            document.write(save[i] + "<br><br><br>");
+        } else {
+            document.write(save[i] + "<br>");
+        }
+    }
+    for (var property in camnter) {
+        document.write(property + " = " + camnter[property] + "<br>");
+    }
+</script>
+
+</body>
+</html>

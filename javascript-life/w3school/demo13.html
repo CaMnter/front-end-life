@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo13</title>
+</head>
+<body>
+
+<p>
+<h1>JavaScript 函数</h1>
+</p>
+
+<script>
+    function function1(var1, var2) {
+        alert(var1 + " " + var2);
+    }
+
+    function function2(var1, var2) {
+        if (var1 == 0)return;
+        return var1 + var2;
+    }
+
+    function delegatedFunction2(var1, var2) {
+        document.getElementById("function2Span").innerHTML = function2(var1, var2);
+    }
+</script>
+
+<p><span>function2 = </span><span id="function2Span"></span></p>
+
+
+<button type="button" onclick="function1('Save','you')">function1('Save','you')</button>
+<button type="button" onclick="delegatedFunction2(0,3)">function2(0,3)</button>
+<button type="button" onclick="delegatedFunction2(3,3)">function2(0,3)</button>
+
+</body>
+</html>

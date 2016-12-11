@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo24</title>
+    <!--
+        onmouseover 和 onmouseout 事件可用于在用户的鼠标移至 HTML 元素上方或移出元素时触发函数
+     -->
+</head>
+<body>
+
+<p>
+<h1>JavaScript onmouseover 和 onmouseout</h1>
+</p>
+
+<div onmouseover="function onDivOver(field) {
+        with (field){
+            innerHTML = 'Save you from anything';
+        }
+     }
+     onDivOver(this)"
+     onmouseout="function onDivOut(field) {
+        with (field){
+        innerHTML = 'Waiting for you';
+        }
+     }
+     onDivOut(this)"
+     style="background-color: green;width: 200px;height: 60px;padding: 66px;color: #ffffff;text-align: center;line-height:60px">
+    Waiting
+    for you
+</div>
+
+</body>
+</html>

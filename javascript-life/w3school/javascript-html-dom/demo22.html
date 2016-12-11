@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo22</title>
+    <!--
+        onload 和 onunload 事件会在用户进入或离开页面时被触发
+        onload 事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本
+        onload 和 onunload 事件可用于处理 cookie
+     -->
+</head>
+<body onload="checkCookie()">
+
+<p>
+<h1>JavaScript onLoad 和 onUnload</h1>
+</p>
+
+<script>
+    function checkCookie() {
+        alert(navigator.cookieEnabled == true ? "已启动 Cookie" : "未启动 Cookie");
+    }
+    function onUnload() {
+        alert("onUnload")
+    }
+</script>
+
+</body>
+</html>

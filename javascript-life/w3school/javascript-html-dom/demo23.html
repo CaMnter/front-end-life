@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo23</title>
+    <!--
+        onchange 事件常结合对输入字段的验证来使用
+     -->
+    <script>
+        const INPUT_PREFIX = "input:";
+        const CHANGE_PREFIX = "change:";
+
+        function onInput(field) {
+            var inputSpan = document.getElementById("inputSpan");
+            with (field) {
+                inputSpan.innerHTML = INPUT_PREFIX + field.value.toUpperCase();
+            }
+        }
+        function onChange(field) {
+            var changeSpan = document.getElementById("changeSpan");
+            with (field) {
+                changeSpan.innerHTML = CHANGE_PREFIX + field.value.toUpperCase();
+            }
+        }
+    </script>
+</head>
+<body>
+
+<p>
+<h1>JavaScript onchange</h1>
+</p>
+
+<div><span id="changeSpan">waiting for input</span></div>
+<div><span id="inputSpan">waiting for input</span></div>
+
+<input type="text" id="input" onchange="onChange(this)" oninput="onInput(this)">
+
+</body>
+</html>

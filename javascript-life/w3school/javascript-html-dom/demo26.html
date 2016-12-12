@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo26</title>
+    <!-- 如需向 HTML DOM 添加新元素，必须首先创建该元素（元素节点），然后向一个已存在的元素追加该元素 -->
+</head>
+<body>
+
+<p>
+<h1>JavaScript 添加节点</h1>
+</p>
+
+<div id="targetDiv"></div>
+
+<script>
+    var targetDiv = document.getElementById("targetDiv");
+    var p = document.createElement("p");
+    var pText = document.createTextNode("Save you from anything");
+    p.appendChild(pText);
+    targetDiv.appendChild(p);
+</script>
+
+</body>
+</html>

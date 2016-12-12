@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo27</title>
+    <!--
+        DOM 需要清楚需要删除的元素，以及它的父元素
+
+        常用的解决方案：找到希望删除的子元素，然后使用其 parentNode 属性来找到父元素：
+            常用的解决方案：找到您希望删除的子元素，然后使用其 parentNode 属性来找到父元素：
+            child.parentNode.removeChild(child);
+     -->
+</head>
+<body>
+
+<p>
+<h1>JavaScript 删除节点</h1>
+</p>
+
+<div id="targetDiv">
+    <p>Save you from anything</p>
+    <p>Save you from anything</p>
+    <p id="targetP">Save you from anything</p>
+</div>
+
+<script>
+    var targetDiv = document.getElementById("targetDiv");
+    var targetElement = targetDiv.children[1];
+    if (targetElement != null) {
+        targetDiv.removeChild(targetElement);
+    }
+    var targetP = document.getElementById("targetP");
+    targetP.parentNode.removeChild(targetP);
+</script>
+
+</body>
+</html>

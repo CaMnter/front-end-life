@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo33</title>
+</head>
+<body>
+
+<p>
+<h1>JavaScript 倒计时</h1>
+</p>
+
+<div id="timeDiv"></div>
+
+<script>
+    const ZERO = "0";
+    const SEPARATOR = ":";
+    function refitTime(value) {
+        return value < 10 ? ZERO + value : value;
+    }
+
+    var timeDiv = document.getElementById("timeDiv");
+    self.setInterval(function () {
+        var date = new Date();
+        var h = refitTime(date.getHours());
+        var m = refitTime(date.getMinutes());
+        var s = refitTime(date.getSeconds());
+        timeDiv.innerHTML = h + SEPARATOR + m + SEPARATOR + s;
+    }, 500)
+</script>
+
+</body>
+</html>

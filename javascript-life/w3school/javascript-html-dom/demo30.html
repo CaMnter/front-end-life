@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo30</title>
+
+    <!--
+        JavaScript 数字可以使用也可以不使用小数点
+        所有 JavaScript 数字均为 64 位
+        JavaScript 不是类型语言。与许多其他编程语言不同，JavaScript 不定义不同类型的数字，比如整数、短、长、浮点等等
+        JavaScript 中的所有数字都存储为根为 10 的 64 位（8 比特），浮点数
+        整数（不使用小数点或指数计数法）最多为 15 位
+        小数的最大位数是 17，但是浮点运算并不总是 100% 准确
+
+        八进制和十六进制
+            如果前缀为 0，则 JavaScript 会把数值常量解释为八进制数，如果前缀为 0 和 "x"，则解释为十六进制数
+     -->
+</head>
+<body>
+
+<p>
+<h1>JavaScript 数字</h1>
+</p>
+
+<script>
+    var x1 = 2.33;
+    var x2 = 233;
+    var x3 = 233e6;
+    var x4 = 233e-6;
+    var x5 = 0666;
+    var x6 = 0x66;
+
+    document.write("<div> 2.33 = " + x1 + "</div>");
+    document.write("<div> 233 = " + x2 + "</div>");
+    document.write("<div> 233e6 = " + x3 + "</div>");
+    document.write("<div> 233e-6 = " + x4 + "</div>");
+    document.write("<div> 0666 = " + x5 + "</div>");
+    document.write("<div> 0x66 = " + x6 + "</div>");
+
+    document.write("<div>最长只有 17 位:  ");
+    var target = 123456789012345677890;
+    document.write(target + "</div>");
+
+    target = 0.2 + 0.1;
+    document.write("<div> 0.2 + 0.1 = " + target + "</div>");
+
+    target = (0.2 * 10 + 0.1 * 10) / 10;
+    document.write("<div> (0.2 * 10 + 0.1 * 10) / 10 = " + target + "</div>");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo34</title>
+
+    <!--
+        for...in 声明来循环输出数组中的元素
+        concat() 方法来合并两个数组
+        join() 方法将数组的所有元素组成一个字符串
+        sort() 方法从字面上对数组进行排序
+        sort() 方法从数值上对数组进行排序
+     -->
+</head>
+<body>
+
+<p>
+<h1>JavaScript 数组</h1>
+</p>
+
+<script>
+    var camnter = new Array(1);
+    camnter[0] = "CaMnter";
+    var save = new Array(4);
+    save[0] = "Save";
+    save[1] = "you";
+    save[2] = "from";
+    save[3] = "anything";
+    var camnterSave = camnter.concat(save);
+
+    document.write("<div> camnter = " + toStringForArray(camnter) + "</div>");
+    document.write("<div> save = " + toStringForArray(save) + "</div>");
+    document.write("<div> camnterSave = " + toStringForArray(camnterSave) + "</div>");
+    document.write("<div> sort-camnterSave = " + toStringForArray(camnterSave.sort()) + "</div>");
+
+    function toStringForArray(array) {
+        var contentArray = [];
+        const SEPARATOR = ", ";
+        var index = 0;
+        for (var value in array) {
+            if (!array.hasOwnProperty(value)) continue;
+            contentArray[index] = array[value];
+            index++;
+        }
+        return contentArray.join(SEPARATOR);
+    }
+</script>
+
+</body>
+</html>

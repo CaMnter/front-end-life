@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo37</title>
+
+    <!--
+        RegExp 对象用于规定在文本中检索的内容。
+        test() 方法检索字符串中的指定值。返回值是 true 或 false
+        exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null
+        compile() 既可以改变检索模式，也可以添加或删除第二个参数
+     -->
+</head>
+<body>
+
+<p>
+<h1>JavaScript RegExp</h1>
+</p>
+
+<script>
+    const SAVE = "Save you from anything";
+    var regExp = new RegExp("you");
+    document.write("SAVE = " + SAVE + "<br>");
+    document.write("RegExp(\"you\").test(SAVE) = " + regExp.test(SAVE) + "<br>");
+    document.write("RegExp(\"you\").test(SAVE) = " + regExp.exec(SAVE) + "<br>");
+</script>
+
+</body>
+</html>

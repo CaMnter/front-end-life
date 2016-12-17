@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo42</title>
+    <!--
+        window.navigator 对象包含有关访问者浏览器的信息
+        警告：来自 navigator 对象的信息具有误导性，不应该被用于检测浏览器版本，这是因为：
+              navigator 数据可被浏览器使用者更改
+              浏览器无法报告晚于浏览器发布的新操作系统
+        浏览器检测
+              由于 navigator 可误导浏览器检测，使用对象检测可用来嗅探不同的浏览器。
+              由于不同的浏览器支持不同的对象，您可以使用对象来检测浏览器。例如，由于只有 Opera 支持属性
+              "window.opera"，您可以据此识别出 Opera
+     -->
+</head>
+<body>
+
+<p>
+<h1>JavaScript Navigator</h1>
+</p>
+
+<script>
+    document.write("navigator.appCodeName = " + navigator.appCodeName + "<br>");
+    document.write("navigator.appName = " + navigator.appName + "<br>");
+    document.write("navigator.appVersion = " + navigator.appVersion + "<br>");
+    document.write("navigator.cookieEnabled = " + navigator.cookieEnabled + "<br>");
+    document.write("navigator.platform = " + navigator.platform + "<br>");
+    document.write("navigator.userAgent = " + navigator.userAgent + "<br>");
+    document.write("navigator.systemLanguage = " + navigator.systemLanguage + "<br>");
+</script>
+
+</body>
+</html>

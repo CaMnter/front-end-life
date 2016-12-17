@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo41</title>
+    <!--
+        window.history 对象包含浏览器的历史
+        为了保护用户隐私，对 JavaScript 访问该对象的方法做出了限制
+            history.back() - 与在浏览器点击后退按钮相同
+            history.forward() - 与在浏览器中点击按钮向前相同
+
+     -->
+</head>
+<body>
+
+<p>
+<h1>JavaScript History</h1>
+</p>
+
+<script>
+    function historyBack() {
+        window.history.back();
+    }
+    function historyForward() {
+        window.history.forward();
+    }
+</script>
+<input type="button" onclick="historyBack()" value="Back"/>
+<input type="button" onclick="historyForward()" value="Forward"/>
+</body>
+</html>

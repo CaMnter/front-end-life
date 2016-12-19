@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo45</title>
+
+    <!--
+        cookie 用来识别用户
+        cookie 是存储于访问者的计算机中的变量。每当同一台计算机通过浏览器请求某个页面时，就会发送这个
+        cookie。你可以使用 JavaScript 来创建和取回 cookie 的值
+        例子：
+            名字 cookie
+                当访问者首次访问页面时，他或她也许会填写他/她们的名字。名字会存储于 cookie 中。当访问者再
+                次访问网站时，他们会收到类似 "Welcome John Doe!" 的欢迎词。而名字则是从 cookie 中取回的
+            密码 cookie
+                当访问者首次访问页面时，他或她也许会填写他/她们的密码。密码也可被存储于 cookie 中。当他们
+                再次访问网站时，密码就会从 cookie 中取回
+            日期 cookie
+                当访问者首次访问你的网站时，当前的日期可存储于 cookie 中。当他们再次访问网站时，他们会收到
+                类似这样的一条消息："Your last visit was on Tuesday August 11, 2005!"。日期也是从
+                cookie 中取回的
+     -->
+    <script type="text/javascript">
+
+        const COOKIE_USER_NAME = "userName";
+        const COOKIE_USER_EXPIRE_DAYS = "expireDays";
+        const EMPTY_STRING = "";
+
+        function getCookie(name) {
+            if (document.cookie.length == 0)return EMPTY_STRING;
+            var nameStart = document.cookie.indexOf(name + "=");
+            if (nameStart == -1)return EMPTY_STRING;
+            nameStart = nameStart + name.length + 1;
+            var nameEnd = document.cookie.indexOf(";", nameStart);
+            if (nameEnd == -1)nameEnd = document.cookie.length;
+            return unescape(document.cookie.substring(nameStart, nameEnd));
+        }
+
+        function setCookie(name, value, expireDays) {
+            var exDate = new Date();
+            exDate.setDate(exDate.getDate() + expireDays);
+            document.cookie = name + "=" + escape(value) + (expireDays == null ? EMPTY_STRING : ";expires=" + exDate.toUTCString());
+        }
+
+        function checkCookie() {
+            var userName = getCookie(COOKIE_USER_NAME);
+            if (isStringEmpty(userName)) {
+                userName = prompt("Please enter your name: ", "");
+                if (!isStringEmpty(userName)) {
+                    setCookie(COOKIE_USER_NAME, userName, COOKIE_USER_EXPIRE_DAYS)
+                }
+            } else {
+                alert("Welcome again " + userName);
+            }
+        }
+
+        function isStringEmpty(value) {
+            return value == null || "" == value;
+        }
+
+    </script>
+</head>
+<body onload="checkCookie()">
+<p>
+<h1>JavaScript Cookies</h1>
+</p>
+</body>
+</html>

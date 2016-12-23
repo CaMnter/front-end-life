@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo02</title>
+
+    <!--
+        1. 当函数无明确返回值时，返回的也是值 "undefined"
+        2. 值 undefined 实际上是从值 null 派生来的
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 原始类型</h1>
+</p>
+
+<script>
+    function emptyFunction() {
+
+    }
+    document.write("emptyFunction = " + emptyFunction() + "<br>");
+    document.write("null == undefined = " + (null == undefined) + "<br>");
+    document.write("070 = " + 070 + "<br>");
+    document.write("0xAB = " + 0xAB + "<br>");
+    document.write("5.0 = " + 5.0 + "<br>");
+    document.write("Number.MAX_VALUE = " + Number.MAX_VALUE + "<br>");
+    document.write("Number.MIN_VALUE = " + Number.MIN_VALUE + "<br>");
+    document.write("(NaN == NaN) = " + (NaN == NaN) + "<br>");
+    document.write("isNaN(\"red\") = " + isNaN("red") + "<br>");
+    document.write("isNaN(\"233\") = " + isNaN("233") + "<br>");
+</script>
+
+</body>
+</html>

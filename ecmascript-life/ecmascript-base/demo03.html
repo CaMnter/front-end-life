@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo03</title>
+
+    <!--
+        采用 Number 类型的 toString() 方法的基模式，可以用不同的基输出数字，例如二进制的基是 2，八进制的
+        基是 8，十六进制的基是 16
+
+        ECMAScript 提供了两种把非数字的原始值转换成数字的方法，即 parseInt() 和 parseFloat()
+        只有对 String 类型调用这些方法，它们才能正确运行；对其他类型返回的都是 NaN
+
+        parseInt() 和 parseFloat() 都会仔细分析该字符串
+        parseInt() 方法首先查看位置 0 处的字符，判断它是否是个有效数字；如果不是，该方法将返回 NaN，不再
+        继续执行其他操作。但如果该字符是有效数字，该方法将查看位置 1 处的字符，进行同样的测试。这一过程将
+        持续到发现非有效数字的字符为止，此时 parseInt() 将把该字符之前的字符串转换成数字
+
+        parseFloat() 方法, 第一个出现的小数点是有效字符。如果有两个小数点，第二个小数点将被看作无效的
+        parseFloat() 会把这个小数点之前的字符转换成数字。这意味着字符串 "11.22.33" 将被解析成 11.22
+
+        parseFloat() 方法的另一不同之处在于，字符串必须以十进制形式表示浮点数，而不是用八进制或十六进制
+        该方法会忽略前导 0，所以八进制数 0102 将被解析为 102。对于十六进制数 0xA，该方法将返回 0，因为
+        在浮点数中，x 不是有效字符
+
+        强制类型转换
+        ECMAScript 中可用的 3 种强制类型转换如下：
+            Boolean(value) - 把给定的值转换成 Boolean 型
+            Number(value) - 把给定的值转换成数字（可以是整数或浮点数）
+            String(value) - 把给定的值转换成字符串
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 类型转换</h1>
+</p>
+
+<script>
+    var six = 6;
+    document.write("six = " + six + "<br>");
+    document.write("six.toString(2) = " + six.toString(2) + "<br>");
+    document.write("six.toString(8) = " + six.toString(8) + "<br>");
+    document.write("six.toString(16) = " + six.toString(16) + "<br><br><br>");
+
+    document.write("parseInt(\"233Save\") = " + parseInt("233Save") + "<br>");
+    document.write("parseInt(\"0xA\") = " + parseInt("0xA") + "<br>");
+    document.write("parseInt(\"26.6\") = " + parseInt("26.6") + "<br>");
+    document.write("parseInt(\"Save\") = " + parseInt("Save") + "<br>");
+    document.write("parseInt(\"AF\") = " + parseInt("AF") + "<br>");
+    document.write("parseInt(\"AF\",16) = " + parseInt("AF", 16) + "<br>");
+    document.write("parseInt(\"10\", 16) = " + parseInt("10", 16) + "<br>");
+    document.write("parseInt(\"10\", 10) = " + parseInt("10", 10) + "<br>");
+    document.write("parseInt(\"10\", 8) = " + parseInt("10", 8) + "<br>");
+    document.write("parseInt(\"10\", 2) = " + parseInt("10", 2) + "<br><br><br>");
+
+    document.write("parseFloat(\"233Save\") = " + parseFloat("233Save") + "<br>");
+    document.write("parseFloat(\"0xA\") = " + parseFloat("0xA") + "<br>");
+    document.write("parseFloat(\"22.33\") = " + parseFloat("22.33") + "<br>");
+    document.write("parseFloat(\"22.33.33\") = " + parseFloat("22.33.33") + "<br>");
+    document.write("parseFloat(\"0206\") = " + parseFloat("0206") + "<br>");
+    document.write("parseFloat(\"Save\") = " + parseFloat("Save") + "<br><br><br>");
+
+    document.write("Boolean(\"\") = " + Boolean("") + "<br>");
+    document.write("Boolean(\"Save\") = " + Boolean("Save") + "<br>");
+    document.write("Boolean(\"26\") = " + Boolean(26) + "<br>");
+    document.write("Boolean(null) = " + Boolean(null) + "<br>");
+    document.write("Boolean(0) = " + Boolean(0) + "<br>");
+    document.write("Boolean(new Object()) = " + Boolean({}) + "<br><br><br>");
+
+    document.write("Number(false) = " + Number(false) + "<br>");
+    document.write("Number(true) = " + Number(true) + "<br>");
+    document.write("Number(undefined) = " + Number(undefined) + "<br>");
+    document.write("Number(null) = " + Number(null) + "<br>");
+    document.write("Number(\"2.3\") = " + Number("2.3") + "<br>");
+    document.write("Number(\"23\") = " + Number("23") + "<br>");
+    document.write("Number(\"2.3.3\") = " + Number("2.3.3") + "<br>");
+    document.write("Number(\"new Object()\") = " + Number({}) + "<br>");
+</script>
+
+</body>
+</html>

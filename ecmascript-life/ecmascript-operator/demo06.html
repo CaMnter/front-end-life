@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo06</title>
+
+    <!--
+        位运算 NOT 由否定号（~）表示
+        位运算 NOT 实质上是对数字求负，然后减 1
+
+        位运算 AND 由和号（&）表示,只有两个 1 才得 1,其他情况都为 0
+
+        位运算 OR 由符号（|）表示,只要一个 1 就可以得到 1, 其他情况为 0
+
+        位运算 XOR 由符号（^）表示,相反为 1,相同为 0
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 位运算</h1>
+</p>
+
+<script>
+    const save = 25;
+    document.write("NOT --- ~25 = " + ~save + "<br>");
+    document.write("AND --- 25 & 3 = " + (save & 3) + "<br>");
+    document.write("OR --- 25 | 3 = " + (save | 3) + "<br>");
+    document.write("XOR --- 25 ^ 3 = " + (save ^ 3) + "<br>");
+    document.write("<< --- 2 << 2 = " + (2 << 2) + "<br>");
+    document.write(">> --- 8 >> 2 = " + (8 >> 2) + "<br>");
+    document.write(">>> --- 4 >>> 1 = " + (4 >>> 1) + "<br>");
+    document.write(">>> --- -2 >>> 0 = " + (-2 >>> 0) + "<br>");
+    document.write(">>> --- (-2 >>> 0).toString(2) = " + (-2 >>> 0).toString(2) + "<br>");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo10</title>
+</head>
+<body>
+
+<p>
+<h1>ECMAScript Function 对象</h1>
+</p>
+
+<script>
+    function one() {
+        // Nothing to do
+    }
+    function add(n) {
+        document.write("[add]\t" + (n + 10) + "<br>");
+    }
+    function add(n) {
+        document.write("[add]\t" + (n + 20) + "<br>");
+    }
+    function callOtherFunction(method, n) {
+        method(n);
+    }
+    add(10);
+    var addMethod = new Function("n", "document.write(\"[addMethod]\t\" + (n + 10) + \"<br>\")");
+    addMethod(10);
+    callOtherFunction(addMethod, 16);
+    document.write("[add.length]\t" + add.length + "<br>");
+    document.write("[one.length]\t" + one.length + "<br>");
+    document.write("[addMethod.length]\t" + addMethod.length + "<br>");
+    document.write("[addMethod.toString]\t" + addMethod.toString() + "<br>");
+    document.write("[callOtherFunction.toString]\t" + callOtherFunction.toString() + "<br>");
+</script>
+
+</body>
+</html>

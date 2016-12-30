@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo09</title>
+
+    <!--
+        检测参数个数
+            可以用 arguments 对象检测函数的参数个数，引用属性 arguments.length
+        模拟函数重载
+            用 arguments 对象判断传递给函数的参数个数
+        arguments 可以被覆盖
+            方法有个参数也叫 arguments 的时候,就会自带的那个 arguments
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript arguments 对象</h1>
+</p>
+
+<script>
+    function save() {
+        document.write("arguments.length = " + arguments.length + "<br>");
+        switch (arguments.length) {
+            case 0:
+                document.write("没有传入参数 <br>");
+                break;
+            case 1:
+                document.write("传入一个参数 <br>");
+                break;
+            case 2:
+                document.write("传入两个参数 <br>");
+                break;
+            case 3:
+                document.write("传入三个参数 <br>");
+                break;
+        }
+        document.write("<br><br>");
+    }
+    function overrideArguments(arguments) {
+        document.write("[overrideArguments]\t" + arguments.length + "<br>");
+    }
+    save();
+    save(1);
+    save(1, 2, 3);
+    overrideArguments("Save you from anything")
+</script>
+
+</body>
+</html>

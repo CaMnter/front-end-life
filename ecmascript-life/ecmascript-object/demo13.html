@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo13</title>
+
+    <!--
+        this 1
+        它用在对象的方法中。关键字 this 总是指向调用该方法的对象
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript this</h1>
+</p>
+
+<script>
+    var methodThis = {};
+    methodThis.sign = "Save you from anything";
+    methodThis.getSign = function () {
+        document.write("[methodThis.getSign]\t[methodThis.sign]\t" + this.sign);
+    }
+    methodThis.getSign();
+</script>
+
+</body>
+</html>

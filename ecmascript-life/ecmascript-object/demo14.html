@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo14</title>
+
+    <!--
+        从功能上讲，这样解决了重复创建函数对象的问题；但是从语义上讲，该函数不太像是对象的方法
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 工厂方式</h1>
+</p>
+
+<script>
+    function getCaMnter() {
+        var camnter = {};
+        camnter.name = "CaMnter";
+        camnter.sign = "Save you from anything"
+        function getName() {
+            return camnter.name;
+        }
+
+        function getSign() {
+            return camnter.sign;
+        }
+
+        camnter.getName = getName();
+        camnter.getSign = getSign();
+        return camnter;
+    }
+    function getCaMnter(age) {
+        var camnter = {};
+        camnter.name = "CaMnter";
+        camnter.sign = "Save you from anything";
+        camnter.age = age;
+        function getAge() {
+            return camnter.age;
+        }
+        function getName() {
+            return camnter.name;
+        }
+        camnter.getName = getName();
+        camnter.getAge = getAge();
+        return camnter;
+    }
+    var camnter = getCaMnter();
+    document.write("[getCaMnter]\t[camnter]\t[camnter.sign]\t" + camnter.getName + "<br>");
+    var copyCaMnter = getCaMnter(233);
+    document.write("[getCaMnter]\t[copyCaMnter]\t[copyCaMnter.age]\t" + copyCaMnter.getAge + "<br>");
+    document.write("[getCaMnter]\t[copyCaMnter]\t[copyCaMnter.age]\t" + copyCaMnter.getName + "<br>");
+</script>
+
+</body>
+</html>

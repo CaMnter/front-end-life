@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo15</title>
+
+    <!--
+        用 new 运算符和类名 Xxx 创建对象，就更像 ECMAScript 中一般对象的创建方式了
+        就像工厂函数，构造函数会重复生成函数，为每个对象都创建独立的函数版本。不过，与工厂函数相似，也可以
+        用外部函数重写构造函数，同样地，这么做语义上无任何意义
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 构造函数方式</h1>
+</p>
+
+<script>
+    function CaMnter(name, sign) {
+        this.name = name;
+        this.sign = sign;
+        this.getName = function () {
+            return this.name;
+        };
+        this.getSign = function () {
+            return this.sign;
+        };
+    }
+    var camnter = new CaMnter("CaMnter", "Save you from anything");
+    document.write("[camnter.getName()]" + camnter.getName() + "<br>");
+    document.write("[camnter.getSign()]" + camnter.getSign() + "<br>");
+</script>
+
+</body>
+</html>

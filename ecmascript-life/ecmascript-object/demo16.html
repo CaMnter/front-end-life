@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo16</title>
+
+    <!--
+        原型方式
+            利用了对象的 prototype 属性，可以把它看成创建新对象所依赖的原型
+            首先用空构造函数来设置类名。然后所有的属性和方法都被直接赋予 prototype 属性
+
+            真正的问题出现在属性指向的是对象，而不是函数时。函数共享不会造成问题，但对象却很少被多个实例共享
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 原型方式</h1>
+</p>
+
+<script>
+    function CaMnter() {
+
+    }
+    CaMnter.prototype.name = "CaMnter";
+    CaMnter.prototype.sign = "Save you from anything";
+    CaMnter.prototype.what = ["A", "B", "C"];
+    CaMnter.prototype.getName = function () {
+        return this.name;
+    };
+    CaMnter.prototype.getSign = function () {
+        return this.sign;
+    };
+    CaMnter.prototype.getWhat = function () {
+        return this.what;
+    };
+    var camnter = new CaMnter();
+    document.write("[camnter.getSign]\t" + camnter.getSign() + "<br>");
+    document.write("[camnter instanceof CaMnter]\t" + (camnter instanceof CaMnter) + "<br>");
+
+    /**
+     * 问题所在
+     * 修改指向 Array 对象的指针,是引用值
+     * 两个实例都指向同一个数组
+     *
+     */
+    var camnterTemp = new CaMnter();
+    camnter.what.push("D");
+    document.write("[camnterTemp.what]\t" + camnterTemp.getWhat() + "<br>");
+</script>
+
+</body>
+</html>

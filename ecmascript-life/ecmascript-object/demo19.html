@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo19</title>
+
+    <!--
+        Js 中的 StringBuffer
+            1. 创建存储结果的字符串
+            2. 把每个字符串复制到结果中的合适位置
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript StringBuffer</h1>
+</p>
+
+<script>
+
+    function StringBuffer() {
+        this._strings_ = [];
+    }
+    StringBuffer.prototype.append = function (string) {
+        this._strings_.push(string);
+    };
+    StringBuffer.prototype.toString = function () {
+        return this._strings_.join("");
+    };
+
+    function timeToCompare(count) {
+        const SAVE = "Save you from anything";
+        var testString = "";
+        var start = new Date();
+        for (var i = 0; i < count; i++) {
+            testString += SAVE;
+        }
+        var end = new Date();
+        document.write("<br>[testString]\t[" + count + "]\t[duration]\t" + (end.getTime() - start.getTime()) + "ms <br>");
+
+        var testStringBuffer = new StringBuffer();
+        start = new Date();
+        for (var j = 0; j < count; j++) {
+            testStringBuffer.append(SAVE);
+        }
+        end = new Date();
+        document.write("[testBuffer]\t[" + count + "]\t[duration]\t" + (end.getTime() - start.getTime()) + "ms <br><br>");
+    }
+
+    var stringBuffer = new StringBuffer();
+    stringBuffer.append("Save");
+    stringBuffer.append(" you from anything");
+    document.write("[stringBuffer]\t" + stringBuffer.toString() + "<br>");
+
+    timeToCompare(1);
+    timeToCompare(6);
+    timeToCompare(66);
+    timeToCompare(666);
+    timeToCompare(6666);
+    timeToCompare(66666);
+    timeToCompare(666666);
+    timeToCompare(6666666);
+    timeToCompare(66666666);
+    timeToCompare(666666666);
+    timeToCompare(6666666666);
+    timeToCompare(66666666666);
+</script>
+
+</body>
+</html>

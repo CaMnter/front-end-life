@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo18</title>
+
+    <!--
+        动态原型方法
+
+        动态原型方法的基本想法与混合的构造函数/原型方式相同，即在构造函数内定义非函数属性，而函数属性则利
+        用原型属性定义。唯一的区别是赋予对象方法的位置
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 动态原型方法</h1>
+</p>
+
+<script>
+    function CaMnter(name, sign) {
+        this.name = name;
+        this.sign = sign;
+        this.what = ["A", "B", "C"];
+        if(typeof CaMnter._initialized == "undefined"){
+            CaMnter.prototype.getName = function () {
+                return this.name;
+            };
+            CaMnter.prototype.getSign = function () {
+                return this.sign;
+            };
+            CaMnter.prototype.getWhat = function () {
+                return this.what;
+            };
+            CaMnter._initialized = true;
+        }
+    }
+    var camnter = new CaMnter("CaMnter", "Save you from anything");
+    document.write("[camnter.name]\t" + camnter.getName() + "<br>");
+    document.write("[camnter.what]\t" + camnter.getWhat() + "<br>");
+</script>
+
+</body>
+</html>

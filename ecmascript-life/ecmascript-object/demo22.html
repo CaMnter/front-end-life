@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo22</title>
+
+    <!--
+        添加与已有方法无关的方法
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 添加与已有方法无关的方法</h1>
+</p>
+
+<script>
+    var array = ["Save", "you", "from", "anything"];
+    Array.prototype.indexOf = function (vItem) {
+        for (var i = 0; i < this.length; i++) {
+            if (vItem == this[i])return 1;
+        }
+        return -1;
+    };
+    document.write("[array.indexOf(\"anything\")]\t" + array.indexOf("anything"));
+</script>
+
+</body>
+</html>

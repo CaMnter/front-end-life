@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo23</title>
+
+    <!--
+        为本地对象添加新方法
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 为本地对象添加新方法</h1>
+</p>
+
+<script>
+    Object.prototype.writeValue = function () {
+        document.write("[Object]\t[value]\t"+this.valueOf()+"<br>");
+    };
+    var save = "Save you from anything";
+    save.writeValue();
+</script>
+
+</body>
+</html>

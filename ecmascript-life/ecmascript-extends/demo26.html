@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo26</title>
+
+    <!--
+        对象冒充
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 对象冒充</h1>
+</p>
+
+<script>
+    function SuperClass(name, sign) {
+        this.name = name;
+        this.sign = sign;
+        this.toString = function () {
+            return "SuperClass";
+        }
+    }
+    function ChildClass(name, sign) {
+        this.superConstructor = SuperClass;
+        this.superConstructor(name, sign);
+        delete this.superConstructor;
+        this.toString = function () {
+            return "ChildClass";
+        }
+    }
+    const NAME = "CaMnter";
+    const SIGN = "Save you from anything";
+    var superClass = new SuperClass(NAME, SIGN);
+    var childClass = new ChildClass(NAME, SIGN);
+    document.write("[" + superClass.toString() + "]\t[name]\t" + superClass.name + "\t[sign]\t" + superClass.sign + "<br>");
+    document.write("[" + childClass.toString() + "]\t[name]\t" + childClass.name + "\t[sign]\t" + childClass.sign + "<br>");
+</script>
+
+</body>
+</html>

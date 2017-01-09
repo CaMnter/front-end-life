@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo28</title>
+
+    <!--
+        apply()
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript apply()</h1>
+</p>
+
+<script>
+    function SuperClassA(name, sign) {
+        this.name = name;
+        this.sign = sign;
+        this.toString = function () {
+            return "SuperClassA";
+        }
+    }
+    function SuperClassB(other) {
+        this.other = other;
+    }
+    function ChildClass(name, sign, other) {
+        SuperClassA.apply(this, arguments);
+        SuperClassB.apply(this, [other]);
+        this.toString = function () {
+            return "ChildClass";
+        }
+    }
+    const NAME = "CaMnter";
+    const SIGN = "Save you from anything";
+    var childClass = new ChildClass(NAME, SIGN, 0x26);
+    document.write("[" + childClass.toString() + "]\t[name]\t" + childClass.name + "\t[sign]\t" +
+            childClass.sign + "\t[other]\t" + childClass.other + "<br>");
+</script>
+
+</body>
+</html>

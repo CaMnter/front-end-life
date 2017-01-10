@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo31</title>
+
+    <!--
+        混合方式: 原型链 + call()
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 混合方式: 原型链 + call()</h1>
+</p>
+
+<script>
+    function SuperClassA(name, sign) {
+        this.name = name;
+        this.sign = sign;
+        this.toString = function () {
+            return "SuperClassA";
+        }
+    }
+    function ChildClass(name, sign, other) {
+        SuperClassA.call(this, name, sign);
+        this.other = other;
+        this.toString = function () {
+            return "ChildClass";
+        }
+    }
+    ChildClass.prototype = new SuperClassA();
+    const NAME = "CaMnter";
+    const SIGN = "Save you from anything";
+    var childClass = new ChildClass(NAME, SIGN, 0x26);
+    document.write("[" + childClass.toString() + "]\t[name]\t" + childClass.name + "\t[sign]\t" +
+            childClass.sign + "\t[other]\t" + childClass.other + "<br>");
+</script>
+
+</body>
+</html>

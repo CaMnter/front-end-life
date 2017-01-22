@@ -32,5 +32,5 @@ var getGlobal = function () {
 
 // import shim from 'system.global/shim'; shim();
 // ES6模块的写法
-// import getGlobal from 'system.global';
+import getGlobal from 'system.global';
 const global = getGlobal();

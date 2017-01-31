@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>string-5</title>
+</head>
+<body>
+
+<p>
+<h1>模板编译</h1>
+</p>
+<div id="div"></div>
+<script>
+
+    var template = `
+        <ul>
+          <% for(var i=0; i < data.supplies.length; i++) { %>
+            <li><%= data.supplies[i] %></li>
+          <% } %>
+        </ul>
+        `;
+
+    function compile(template) {
+        var evalExpr = /<%=(.+?)%>/g;
+        var expr = /<%([\s\S]+?)%>/g;
+
+        template = template
+                .replace(evalExpr, '`); \n  echo( $1 ); \n  echo(`')
+                .replace(expr, '`); \n $1 \n  echo(`');
+
+        template = 'echo(`' + template + '`);';
+
+        var script =
+                `(function parse(data){
+                    var output = "";
+
+                    function echo(html){
+                      output += html;
+                    }
+
+                    ${ template }
+
+                    return output;
+        })`;
+
+        return script;
+    }
+    var div = document.getElementById("div");
+    var parse = eval(compile(template));
+    div.innerHTML = parse({supplies: ["CaMnter", "Save you from anything", "魔法使"]});
+</script>
+</body>
+</html>

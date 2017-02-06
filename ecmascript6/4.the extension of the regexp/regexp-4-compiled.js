@@ -94,10 +94,45 @@ console.log("[regexp]\t\t[test-" + 4 + "]\t\t[/foo[^]bar/.test('foo\\nbar')] = "
 // console.log("[regexp]\t\t[test-" + 4 + "]\t\t[re.test('foo\nbar')] = " + re.test('foo\nbar'));
 // console.log("[regexp]\t\t[test-" + 4 + "]\t\t[re.dotAll] = " + re.dotAll);
 // console.log("[regexp]\t\t[test-" + 4 + "]\t\t[re.flags] = " + re.flags);
+console.log("");
 
 /**
  * /s 修饰符和多行修饰符 /m 不冲突，两者一起使用的情况下，.匹配所有字符，而 ^ 和 $ 匹配
  * 每一行的行首和行尾
  */
+
+/************
+ * 后行断言 *
+ ************/
+
+/**
+ * JavaScript 语言的正则表达式，只支持先行断言（lookahead）和先行否定断言（negative lookahead），不支持后
+ * 行断言（lookbehind）和后行否定断言（negative lookbehind）
+ *
+ * ES7 加入后行断言。V8 引擎 4.9版 已经支持，Chrome 浏览器 49版 打开 ”experimental JavaScript features“
+ * 开关（地址栏键入 about:flags ），就可以使用这项功能
+ */
+
+/**
+ * ”先行断言“ 指的是，x 只有在 y 前面才匹配，必须写成 /x(?=y)/。比如，只匹配百分号之前的数字，要写成
+ * /\d+(?=%)/
+ *
+ * ”先行否定断言“ 指的是，x 只有不在 y 前面才匹配，必须写成 /x(?!y)/。比如，只匹配不在百分号之前的数字，要
+ * 写成 /\d+(?!%)/
+ *
+ * ”先行断言“括号之中的部分（(?=%)），是不计入返回结果的
+ */
+console.log("[regexp]\t\t[test-" + 5 + "]\t\t[/\d+(?=%)/.exec('267% Save you from anything')] = " + /\d+(?=%)/.exec('267% Save you from anything'));
+console.log("[regexp]\t\t[test-" + 5 + "]\t\t[/\d+(?!%)/.exec('Save you from anything 267 Save you from anything')] = " + /\d+(?!%)/.exec('Save you from anything 267 Save you from anything'));
+
+/**
+ * "后行断言" 正好与 "先行断言" 相反，x 只有在 y 后面才匹配，必须写成 /(?<=y)x/。比如，只匹配美元符号之后
+ * 的数字，要写成 /(?<=\$)\d+/
+ *
+ * ”后行否定断言“ 则与 ”先行否定断言“ 相反，x 只有不在 y 后面才匹配，必须写成 /(?<!y)x/。比如，只匹配不在
+ * 美元符号后面的数字，要写成 /(?<!\$)\d+/
+ */
+// console.log("[regexp]\t\t[test-" + 5 + "]\t\t[/(?<=\$)\d+/.exec('Save you from anything $267')] = " + /(?<=\$)\d+/.exec('Save you from anything $267'));
+// console.log("[regexp]\t\t[test-" + 5 + "]\t\t[/(?<=\$)\d+/.exec('Save you from anything €267')] = " + /(?<!\$)\d+/.exec('Save you from anything €267'));
 
 //# sourceMappingURL=regexp-4-compiled.js.map

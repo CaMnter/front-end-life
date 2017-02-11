@@ -70,4 +70,4 @@ function trusty(left, right, result) {
 console.log("[numeric]\t\t[test-" + 5 + "]\t\t[trusty(3, 3, 6)] = " + trusty(3, 3, 6));
 trusty(9007199254740993, 990, 9007199254740993 - 990);
 
-//# sourceMappingURL=numberic-3-compiled.js.map
+//# sourceMappingURL=numeric-3-compiled.js.map

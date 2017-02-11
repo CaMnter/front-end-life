@@ -71,4 +71,4 @@ Math.cbrt = Math.cbrt || function (x) {
   return x < 0 ? -y : y;
 };
 
-//# sourceMappingURL=numeric-4-compiled.jsmap
+//# sourceMappingURL=numeric-4-compiled.js.map

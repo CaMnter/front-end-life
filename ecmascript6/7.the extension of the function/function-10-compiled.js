@@ -147,4 +147,24 @@ f2(2, 6, 7);
     }.bind({ x: 'inner' })()];
 }).call({ x: 'outer' });
 
+/**
+ * 下面只有一个 this
+ */
+// 指向 全局对象 window this
+function foo() {
+    var _this7 = this;
+
+    // 函数作用域 this
+    return function () {
+        // 没有 this => 指向 函数作用域 foo this
+        return function () {
+            // 没有 this => 指向 函数作用域 foo this
+            return function () {
+                // 没有 this => 指向 函数作用域 foo this
+                console.log('name:', _this7.name);
+            };
+        };
+    };
+}
+
 //# sourceMappingURL=function-10-compiled.js.map

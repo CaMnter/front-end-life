@@ -132,3 +132,22 @@ f2(2, 6, 7);
     ];
 }).call({x: 'outer'});
 
+
+/**
+ * 下面只有一个 this
+ */
+// 指向 全局对象 window this
+function foo() {
+    // 函数作用域 this
+    return () => {
+        // 没有 this => 指向 函数作用域 foo this
+        return () => {
+            // 没有 this => 指向 函数作用域 foo this
+            return () => {
+                // 没有 this => 指向 函数作用域 foo this
+                console.log('name:', this.name);
+            };
+        };
+    };
+}
+

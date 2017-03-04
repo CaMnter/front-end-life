@@ -67,5 +67,61 @@ function FibonacciB(z) {
 console.log("[function]\t\t[test-" + 3 + "]\t\t[FibonacciB(100)] = " + FibonacciB(100));
 console.log("[function]\t\t[test-" + 3 + "]\t\t[FibonacciB(1000)] = " + FibonacciB(1000));
 console.log("[function]\t\t[test-" + 3 + "]\t\t[FibonacciB(1000)] = " + FibonacciB(1000));
+console.log("");
+
+/*****************
+ * 递归函数的改写 *
+ *****************/
+
+/**
+ * 尾递归的实现，往往需要改写递归函数，确保最后一步只调用自身。
+ * 做到这一点的方法，就是把所有用到的内部变量改写成函数的参数
+ *
+ * factorial 需要用到一个中间变量 total ，那就把这个中间变量改写成函数的参数。
+ * 这样做的缺点就是不太直观，第一眼很难看出来
+ * 需要传入 两个值
+ */
+
+/**
+ * 方法一
+ * 是在尾递归函数之外，再提供一个正常形式的函数。
+ */
+
+function tailFactorial(n, total) {
+  if (n === 1) return total;
+  return tailFactorial(n - 1, n * total);
+}
+
+function factorialC(n) {
+  return tailFactorial(n, 1);
+}
+
+console.log("[function]\t\t[test-" + 4 + "]\t\t[factorialC(167)] = " + factorialC(167));
+console.log("");
+
+/**
+ * 函数式编程有一个概念，叫做柯里化（currying），意思是将多参数的函数转换成单参数的形式。这里也可以使用柯里化
+ */
+function currying(fn, n) {
+  return function (m) {
+    return fn.call(this, m, n);
+  };
+}
+
+var factorialD = currying(tailFactorial, 1);
+console.log("[function]\t\t[test-" + 5 + "]\t\t[factorialD(167)] = " + factorialD(167));
+console.log("");
+
+/**
+ * 第二种
+ * 就是采用 ES6 的函数默认值。
+ */
+function factorialE(n) {
+  var total = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+
+  if (n === 1) return total;
+  return factorialE(n - 1, n * total);
+}
+console.log("[function]\t\t[test-" + 6 + "]\t\t[factorialE(167)] = " + factorialE(167));
 
 //# sourceMappingURL=function-13-compiled.js.map

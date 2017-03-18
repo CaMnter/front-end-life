@@ -39,3 +39,12 @@ let o2 = {a: 1, b: 2, c: 3};
     // }
     // console.log('');
 })();
+
+var i = 0;
+(function () {
+    for (var i = 0; i < 100; i++) {
+
+    }
+    console.log("内部 [i] = " + i);
+})();
+console.log("外部 [i] = " + i);

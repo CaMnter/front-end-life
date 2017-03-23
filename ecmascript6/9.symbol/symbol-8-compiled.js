@@ -64,11 +64,12 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
      */
     var targetClass = { 0: '3', 1: '4', length: 2 };
     targetClass[Symbol.isConcatSpreadable] = true;
+    //noinspection JSCheckFunctionSignatures
     var source = ['1', '2'].concat(targetClass, '5', '6');
-    console.log("[symbol]\t\t[test-" + 3 + "]\t\t[targetClass[Symbol.isConcatSpreadable]] = ", targetClass[Symbol.isConcatSpreadable]);
-    console.log("[symbol]\t\t[test-" + 3 + "]\t\t[targetClass] = ", targetClass);
-    console.log("[symbol]\t\t[test-" + 3 + "]\t\t[source[Symbol.isConcatSpreadable]] = ", source[Symbol.isConcatSpreadable]);
-    console.log("[symbol]\t\t[test-" + 3 + "]\t\t[source] = ", source, '\n');
+    console.log("[symbol]\t\t[test-" + 4 + "]\t\t[targetClass[Symbol.isConcatSpreadable]] = ", targetClass[Symbol.isConcatSpreadable]);
+    console.log("[symbol]\t\t[test-" + 4 + "]\t\t[targetClass] = ", targetClass);
+    console.log("[symbol]\t\t[test-" + 4 + "]\t\t[source[Symbol.isConcatSpreadable]] = ", source[Symbol.isConcatSpreadable]);
+    console.log("[symbol]\t\t[test-" + 4 + "]\t\t[source] = ", source, '\n');
 })();
 
 // 一直展开
@@ -113,9 +114,9 @@ var A2 = function (_Array2) {
     var a2 = new A2();
     a2[0] = 'A2-3';
     a2[1] = 'A2-4';
-    console.log("[symbol]\t\t[test-" + 4 + "]\t\t[a1] = ", a1);
-    console.log("[symbol]\t\t[test-" + 4 + "]\t\t[a2] = ", a2);
-    console.log("[symbol]\t\t[test-" + 4 + "]\t\t[['2', '3', '3'].concat(a1, a2)] = ", ['2', '3', '3'].concat(a1, a2), '\n');
+    console.log("[symbol]\t\t[test-" + 5 + "]\t\t[a1] = ", a1);
+    console.log("[symbol]\t\t[test-" + 5 + "]\t\t[a2] = ", a2);
+    console.log("[symbol]\t\t[test-" + 5 + "]\t\t[['2', '3', '3'].concat(a1, a2)] = ", ['2', '3', '3'].concat(a1, a2), '\n');
 })();
 
 //# sourceMappingURL=symbol-8-compiled.js.map

@@ -41,9 +41,9 @@ class SearchClass {
     }
 
     [Symbol.search](string) {
-        console.log("[symbol]\t\t[test-" + 3 + "]\t\t[V[Symbol.replace]] >>>>>>");
+        console.log("[symbol]\t\t[test-" + 3 + "]\t\t[SearchClass[Symbol.replace]] >>>>>>");
         console.log("[symbol]\t\t[test-" + 3 + "]\t\t[string] = " + string);
-        console.log("[symbol]\t\t[test-" + 3 + "]\t\t[V[Symbol.replace]] >>>>>>");
+        console.log("[symbol]\t\t[test-" + 3 + "]\t\t[SearchClass[Symbol.replace]] >>>>>>");
         return string.indexOf(this.value);
     }
 }

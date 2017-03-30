@@ -134,4 +134,4 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     fruit.method(); // ok
 })();
 
-//# sourceMappingURL=structute-4-compiled.js.map
+//# sourceMappingURL=structure-4-compiled.js.map

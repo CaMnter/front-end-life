@@ -57,7 +57,7 @@
  */
 
 /**
- * 实例：
+ * 实例一：
  * 让对象用上 for...of
  */
 (() => {
@@ -93,5 +93,153 @@
 
     for (let value of getRangeInterator(1, 7)) {
         console.log("[iterator]  [test-" + 2 + "]  [value] = ", value);
+    }
+    console.log('');
+})();
+
+/**
+ * 实例二：
+ * 实现 指针 结构
+ */
+(() => {
+    function Pointer(value) {
+        this.value = value;
+        this.next = null;
+    }
+
+    Pointer.prototype[Symbol.iterator] = function () {
+        let iterator = {
+            next: next
+        };
+        let current = this;
+
+        function next() {
+            if (current) {
+                let value = current.value;
+                current = current.next;
+                return {
+                    value: value,
+                    done: false
+                };
+            } else {
+                return {
+                    done: true
+                };
+            }
+        }
+
+        return iterator;
+    }
+
+    let save = new Pointer('save');
+    let you = new Pointer('you');
+    let from = new Pointer('from');
+    let anything = new Pointer('anything');
+
+    save.next = you;
+    you.next = from;
+    from.next = anything;
+
+    for (let value of save) {
+        console.log("[iterator]  [test-" + 3 + "]  [value] = ", value);
+    }
+    console.log('');
+})();
+
+/**
+ * 实例三：
+ * 为对象添加 Iterator 接口
+ */
+(() => {
+    let target = {
+        data: [],
+        [Symbol.iterator](){
+            const self = this;
+            let index = 0;
+
+            function next() {
+                if (index < self.data.length) {
+                    return {
+                        value: self.data[index++],
+                        done: false
+                    }
+                } else {
+                    return {
+                        value: undefined,
+                        done: true
+                    }
+                }
+            }
+
+            let iterator = {
+                next: next
+            }
+            return iterator
+        }
+    }
+    let array = ['save', 'you', 'from', 'anything'];
+    target.data.push(...array);
+    console.log("[iterator]  [test-" + 4 + "]  [target] = ", target);
+    for (let targetValue of target) {
+        console.log("[iterator]  [test-" + 4 + "]  [targetValue] = ", targetValue);
+    }
+    console.log('');
+})();
+
+/**
+ * 实例四：
+ * 引用现成的 Iterator 接口
+ */
+(() => {
+    let target = {
+        0: 'save',
+        1: 'you',
+        2: 'from',
+        3: 'anything',
+        length: 7,
+        [Symbol.iterator]: Array.prototype[Symbol.iterator]
+    };
+    for (let value of target) {
+        console.log("[iterator]  [test-" + 5 + "]  [value] = ", value);
+    }
+    console.log('');
+    // 必须对应数组的结构的 对象才可以，普通对象不可以
+    let erroTarget = {
+        save: 'save',
+        you: 'you',
+        from: 'from',
+        anything: 'anything',
+        length: 4,
+        [Symbol.iterator]: Array.prototype[Symbol.iterator]
+    };
+    for (let value of erroTarget) {
+        console.log("[iterator]  [test-" + 6 + "]  [value] = ", value);
+    }
+    console.log('');
+})();
+
+/**
+ * Symbol.iterator 返回的必须是 遍历器对象 Iterator
+ */
+(() => {
+    let targetA = {};
+    targetA[Symbol.iterator] = () => 2233;
+    try {
+        for (let value of targetA) {
+        }
+    } catch (e) {
+        console.log("[iterator]  [test-" + 7 + "]  [e] = ", e);
+    }
+
+    let targetB = {};
+    targetB[Symbol.iterator] = {
+        next: function () {
+            return {
+                value: undefined,
+                done: true
+            }
+        }
+    };
+    for (let value of targetB) {
     }
 })();

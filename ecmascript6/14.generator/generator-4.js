@@ -6,6 +6,8 @@
  * Generator for..of *
  *********************/
 
+require("babel-polyfill");
+
 /**
  * Generator 是一个生成 Iterator 的方法
  * 然而 for...of 就需要 Iterator

@@ -14,6 +14,8 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
  * Generator for..of *
  *********************/
 
+require("babel-polyfill");
+
 /**
  * Generator 是一个生成 Iterator 的方法
  * 然而 for...of 就需要 Iterator

@@ -16,7 +16,7 @@
     let target = {};
     let proxy = new Proxy(target, {
         defineProperty(target, key, descriptor) {
-            return false;
+            return true;
         }
     });
     proxy.save = 'save';

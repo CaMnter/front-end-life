@@ -250,7 +250,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                     done: true
                 };
             }
-        }
+        };
 
         var iterator = {
             next: next
@@ -398,13 +398,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
 
     var targetB = {};
-    targetB[Symbol.iterator] = {
-        next: function next() {
+    targetB[Symbol.iterator] = function () {
+        function next() {
             return {
                 value: undefined,
                 done: true
             };
-        }
+        };
+        var iterator = {
+            next: next
+        };
+        return iterator;
     };
     var _iteratorNormalCompletion8 = true;
     var _didIteratorError8 = false;

@@ -6,6 +6,8 @@
  * Generator next *
  ******************/
 
+require("babel-polyfill");
+
 /**
  * yield 语句本身没有 具体返回值，一直返回 undefined
  * next 方法可以加一个参数，作为上一次 yield 的返回值

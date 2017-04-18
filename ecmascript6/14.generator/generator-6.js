@@ -6,6 +6,8 @@
  * Generator.prototype.return *
  ******************************/
 
+require("babel-polyfill");
+
 /**
  * Generator 方法返回的 Iterator 对象，还有一个 return 方法
  * 可以返回给定的值

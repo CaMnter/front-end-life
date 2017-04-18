@@ -8,6 +8,8 @@
  * yield* 语句 - A *
  ******************/
 
+require("babel-polyfill");
+
 /**
  * Generator 方法内部，直接调用 Generator 是没效果的
  */
@@ -61,7 +63,6 @@
         }
     }
 
-    ;
     console.log('');
 })();
 

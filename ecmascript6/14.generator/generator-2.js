@@ -7,6 +7,8 @@
  * Generator 与 Iterator *
  *************************/
 
+require("babel-polyfill");
+
 /**
  * Symbol.iterator 方法，必须是一个生成 Iterator 的方法
  * Generator 函数就是 Iterator 生成函数

@@ -169,12 +169,12 @@
                         done: true
                     }
                 }
-            }
+            };
 
             let iterator = {
                 next: next
-            }
-            return iterator
+            };
+            return iterator;
         }
     }
     let array = ['save', 'you', 'from', 'anything'];
@@ -232,13 +232,17 @@
     }
 
     let targetB = {};
-    targetB[Symbol.iterator] = {
-        next: function () {
+    targetB[Symbol.iterator] = function () {
+        function next() {
             return {
                 value: undefined,
                 done: true
             }
-        }
+        };
+        let iterator = {
+            next: next
+        };
+        return iterator;
     };
     for (let value of targetB) {
     }

@@ -18,7 +18,7 @@
     var target = {};
     var proxy = new Proxy(target, {
         defineProperty: function defineProperty(target, key, descriptor) {
-            return false;
+            return true;
         }
     });
     proxy.save = 'save';

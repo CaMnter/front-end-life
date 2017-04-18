@@ -10,6 +10,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
  * Generator 函数基本 *
  *********************/
 
+require("babel-polyfill");
+
 /**
  * Generator 函数是 ES6 提供的一种异步编程解决方案
  *
@@ -226,9 +228,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 (function () {
     var NUMBER = 'number';
     var array = [1, [[2, 3], 4], [5, 6]];
-    var depthTraversal = regeneratorRuntime.mark(function depthTraversal(array) {
+    var depthTraversal = regeneratorRuntime.mark(function _callee(array) {
         var length, i, element;
-        return regeneratorRuntime.wrap(function depthTraversal$(_context8) {
+        return regeneratorRuntime.wrap(function _callee$(_context8) {
             while (1) {
                 switch (_context8.prev = _context8.next) {
                     case 0:
@@ -268,7 +270,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                         return _context8.stop();
                 }
             }
-        }, depthTraversal, this);
+        }, _callee, this);
     });
     console.log("[generator]  [test-" + 5 + "]  [array] = ", array);
     var _iteratorNormalCompletion2 = true;

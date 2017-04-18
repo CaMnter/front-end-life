@@ -12,6 +12,8 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
  * Iterator 接口与 Generator 函数 *
  *********************************/
 
+require("babel-polyfill");
+
 (function () {
     var generator = {};
     // Symbol.iterator 可以直接写 generator 函数

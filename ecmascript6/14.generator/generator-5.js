@@ -6,6 +6,8 @@
  * Generator.prototype.throw *
  *****************************/
 
+require("babel-polyfill");
+
 /**
  * Generator 函数返回的遍历器对象，都有一个 throw 方法
  * 可以在函数体外抛出错误，然后在 Generator 函数体内捕获

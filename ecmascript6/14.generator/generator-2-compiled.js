@@ -8,6 +8,8 @@
  * Generator 与 Iterator *
  *************************/
 
+require("babel-polyfill");
+
 /**
  * Symbol.iterator 方法，必须是一个生成 Iterator 的方法
  * Generator 函数就是 Iterator 生成函数
@@ -78,8 +80,8 @@
  * 执行这个 Symbol.iterator 属性上的方法后，得到自己
  */
 (function () {
-  var generator = regeneratorRuntime.mark(function generator() {
-    return regeneratorRuntime.wrap(function generator$(_context2) {
+  var generator = regeneratorRuntime.mark(function _callee2() {
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
@@ -87,7 +89,7 @@
             return _context2.stop();
         }
       }
-    }, generator, this);
+    }, _callee2, this);
   });
   var iterator = generator();
   console.log("[generator]  [test-" + 2 + "]  [iterator[Symbol.iterator] === iterator] = ", iterator[Symbol.iterator]() === iterator);

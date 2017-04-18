@@ -8,13 +8,15 @@
  * Generator.prototype.throw *
  *****************************/
 
+require("babel-polyfill");
+
 /**
  * Generator 函数返回的遍历器对象，都有一个 throw 方法
  * 可以在函数体外抛出错误，然后在 Generator 函数体内捕获
  */
 (function () {
-    var generatorFunction = regeneratorRuntime.mark(function generatorFunction() {
-        return regeneratorRuntime.wrap(function generatorFunction$(_context) {
+    var generatorFunction = regeneratorRuntime.mark(function _callee() {
+        return regeneratorRuntime.wrap(function _callee$(_context) {
             while (1) {
                 switch (_context.prev = _context.next) {
                     case 0:
@@ -37,7 +39,7 @@
                         return _context.stop();
                 }
             }
-        }, generatorFunction, this, [[0, 5]]);
+        }, _callee, this, [[0, 5]]);
     });
     var generator = generatorFunction();
     generator.next();
@@ -56,8 +58,8 @@
  * 建议抛 Error 对象
  */
 (function () {
-    var generatorFunction = regeneratorRuntime.mark(function generatorFunction() {
-        return regeneratorRuntime.wrap(function generatorFunction$(_context2) {
+    var generatorFunction = regeneratorRuntime.mark(function _callee2() {
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
             while (1) {
                 switch (_context2.prev = _context2.next) {
                     case 0:
@@ -80,7 +82,7 @@
                         return _context2.stop();
                 }
             }
-        }, generatorFunction, this, [[0, 5]]);
+        }, _callee2, this, [[0, 5]]);
     });
     var generator = generatorFunction();
     generator.next();
@@ -91,8 +93,8 @@
  * throw 方法被捕获后，会附带执行下一条 yield 语句
  */
 (function () {
-    var generatorFunction = regeneratorRuntime.mark(function generatorFunction() {
-        return regeneratorRuntime.wrap(function generatorFunction$(_context3) {
+    var generatorFunction = regeneratorRuntime.mark(function _callee3() {
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
             while (1) {
                 switch (_context3.prev = _context3.next) {
                     case 0:
@@ -117,7 +119,7 @@
                         return _context3.stop();
                 }
             }
-        }, generatorFunction, this, [[0, 5]]);
+        }, _callee3, this, [[0, 5]]);
     });
     var generator = generatorFunction();
     console.log("[generator]  [test-" + 3 + "]  [generator.next()] = ", generator.next());

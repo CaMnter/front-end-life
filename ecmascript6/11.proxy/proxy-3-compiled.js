@@ -21,7 +21,7 @@
             if (propertyKey === 'save' && value == null) {
                 throw new TypeError('The save is not null');
             } else {
-                Reflect.set(target, propertyKey, value, receiver);
+                return Reflect.set(target, propertyKey, value, receiver);
             }
         }
     };

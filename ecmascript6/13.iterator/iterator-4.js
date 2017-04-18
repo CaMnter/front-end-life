@@ -6,6 +6,8 @@
  * Iterator 接口与 Generator 函数 *
  *********************************/
 
+require("babel-polyfill");
+
 (() => {
     let generator = {};
     // Symbol.iterator 可以直接写 generator 函数

@@ -6,6 +6,8 @@
  * yield* 语句 - A *
  ******************/
 
+require("babel-polyfill");
+
 /**
  * Generator 方法内部，直接调用 Generator 是没效果的
  */
@@ -18,7 +20,6 @@
     for (let value of generatorFunction()) {
         console.log("[generator]  [test-" + 1 + "]  [value] = ", value);
     }
-    ;
     console.log('');
 })();
 

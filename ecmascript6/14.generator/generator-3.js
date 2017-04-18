@@ -48,15 +48,15 @@ require("babel-polyfill");
     }
 
     let generatorA = func(2);
-    // 调用前暂停到 yield (v + 1)，调用后 返回 v + 1，然后暂停到下个 yield (x / 3)
+    // 暂停到 yield (v + 1)，调用后 返回 v + 1
     // 得到 3
     console.log("[generator]  [test-" + 2 + "]  [generatorA.next()] = ", generatorA.next());
-    // 调用前暂停到 yield (x / 3)，调用后 返回 x / 3，然后暂停到 return
+    // 暂停到 yield (x / 3)，调用后 返回 x / 3
     // x = 2 * (yield (v + 1))，yield (v + 1) = undefined
     // x = 2 * undefined = NaN
     // x / 3 = NaN
     console.log("[generator]  [test-" + 2 + "]  [generatorA.next()] = ", generatorA.next());
-    // 调用前暂停到 return，调用后 返回 v + x + y，return 调用后结束
+    // 暂停到 return，调用后 返回 v + x + y，return 调用后结束
     // x = 2 * (yield (v + 1))，yield (v + 1) = undefined
     // x = 2 * undefined = NaN
     // y = yield (x / 3)，yield (x / 3) = undefined
@@ -65,15 +65,15 @@ require("babel-polyfill");
     console.log("[generator]  [test-" + 2 + "]  [generatorA.next()] = ", generatorA.next());
 
     let generatorB = func(2);
-    // 调用前暂停到 yield (v + 1)，调用后 返回 v + 1，然后暂停到下个 yield (x / 3)
+    // 暂停到 yield (v + 1)，调用后 返回 v + 1
     // 得到 3
     console.log("[generator]  [test-" + 3 + "]  [generatorB.next()] = ", generatorB.next());
-    // 调用前暂停到 yield (x / 3)，调用后 返回 x / 3，然后暂停到 return
+    // 暂停到 yield (x / 3)，调用后 返回 x / 3
     // x = 2 * (yield (v + 1))，yield (v + 1) = 3
     // x = 2 * 3 = 6
     // x / 3 = 2
     console.log("[generator]  [test-" + 3 + "]  [generatorB.next()] = ", generatorB.next(3));
-    // 调用前暂停到 return，调用后 返回 v + x + y，return 调用后结束
+    // 暂停到 return，调用后 返回 v + x + y，return 调用后结束
     // x = 2 * (yield (v + 1))，yield (v + 1) = 3
     // x = 2 * 3 = 6
     // y = yield (x / 3)，yield (x / 3) = 3

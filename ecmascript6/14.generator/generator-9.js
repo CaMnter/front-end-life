@@ -92,3 +92,43 @@ require("babel-polyfill");
     console.log("[generator]  [test-" + 5 + "]  [generator.save] = ", generator.save);
     console.log("[generator]  [test-" + 5 + "]  [generator.you] = ", generator.you, '\n');
 })();
+
+/********************
+ * Generator 状态机 *
+ *******************/
+
+/**
+ * 普通 状态机
+ */
+(() => {
+    let ticking = true;
+    const TICK = 'Tick', TOCK = 'Tock';
+    let clock = function () {
+        console.log("[generator]  [test-" + 6 + "]  [clock] = ", ticking ? TICK : TOCK);
+        ticking = !ticking;
+    };
+    for (let i = 0; i < 3; i++) {
+        clock();
+    }
+    console.log('');
+})();
+
+/**
+ * Generator 状态机
+ */
+(() => {
+    const TICK = 'Tick', TOCK = 'Tock';
+
+    function* clockGenerator() {
+        while (true) {
+            console.log("[generator]  [test-" + 7 + "]  [clock] = ", TICK);
+            yield;
+            console.log("[generator]  [test-" + 7 + "]  [clock] = ", TOCK);
+            yield;
+        }
+    };
+    let clock = clockGenerator();
+    for (let i = 0; i < 3; i++) {
+        clock.next();
+    }
+})();

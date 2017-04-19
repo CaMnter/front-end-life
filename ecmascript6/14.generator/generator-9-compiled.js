@@ -172,4 +172,70 @@ require("babel-polyfill");
     console.log("[generator]  [test-" + 5 + "]  [generator.you] = ", generator.you, '\n');
 })();
 
+/********************
+ * Generator 状态机 *
+ *******************/
+
+/**
+ * 普通 状态机
+ */
+(function () {
+    var ticking = true;
+    var TICK = 'Tick',
+        TOCK = 'Tock';
+    var clock = function clock() {
+        console.log("[generator]  [test-" + 6 + "]  [clock] = ", ticking ? TICK : TOCK);
+        ticking = !ticking;
+    };
+    for (var i = 0; i < 3; i++) {
+        clock();
+    }
+    console.log('');
+})();
+
+/**
+ * Generator 状态机
+ */
+(function () {
+    var _marked5 = [clockGenerator].map(regeneratorRuntime.mark);
+
+    var TICK = 'Tick',
+        TOCK = 'Tock';
+
+    function clockGenerator() {
+        return regeneratorRuntime.wrap(function clockGenerator$(_context7) {
+            while (1) {
+                switch (_context7.prev = _context7.next) {
+                    case 0:
+                        if (!true) {
+                            _context7.next = 9;
+                            break;
+                        }
+
+                        console.log("[generator]  [test-" + 7 + "]  [clock] = ", TICK);
+                        _context7.next = 4;
+                        return;
+
+                    case 4:
+                        console.log("[generator]  [test-" + 7 + "]  [clock] = ", TOCK);
+                        _context7.next = 7;
+                        return;
+
+                    case 7:
+                        _context7.next = 0;
+                        break;
+
+                    case 9:
+                    case "end":
+                        return _context7.stop();
+                }
+            }
+        }, _marked5[0], this);
+    };
+    var clock = clockGenerator();
+    for (var i = 0; i < 3; i++) {
+        clock.next();
+    }
+})();
+
 //# sourceMappingURL=generator-9-compiled.js.map

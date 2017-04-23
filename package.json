@@ -10,5 +10,8 @@
   },
   "scripts": {
     "build": "babel src -d lib"
+  },
+  "dependencies": {
+    "async": "^2.3.0"
   }
 }

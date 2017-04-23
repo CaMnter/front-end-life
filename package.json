@@ -12,6 +12,7 @@
     "build": "babel src -d lib"
   },
   "dependencies": {
-    "async": "^2.3.0"
+    "async": "^2.3.0",
+    "es6-promise-try": "^1.0.2"
   }
 }

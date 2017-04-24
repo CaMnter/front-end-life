@@ -44,17 +44,13 @@ react-native run-android
 <br>
 
 **Android Emulator**
-
-<br>
-   
+ 
 - Open index.android.js in your text editor of choice and edit some lines.
 - Press the R key twice or select Reload from the Developer Menu to see your change!
 
 <br>
  
 **Mobile phone**
- 
-<br>
  
  Shake the phone
  

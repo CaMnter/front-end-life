@@ -20,13 +20,13 @@ react-native init AwesomeProject
 <br>
 
       To run your app on iOS:
-         cd /Users/CaMnter/WebstormProjects/front-end-life/react-native/AwesomeProject
+         cd /Users/CaMnter/WebstormProjects/front-end-life/react-native-life/AwesomeProject
          react-native run-ios
          - or -
          Open ios/AwesomeProject.xcodeproj in Xcode
          Hit the Run button
       To run your app on Android:
-         cd /Users/CaMnter/WebstormProjects/front-end-life/react-native/AwesomeProject
+         cd /Users/CaMnter/WebstormProjects/front-end-life/react-native-life/AwesomeProject
          Have an Android emulator running (quickest way to get started), or a device connected
          react-native run-android
 

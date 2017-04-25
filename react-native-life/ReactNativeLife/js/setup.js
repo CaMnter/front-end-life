@@ -24,81 +24,12 @@
 
 'use strict';
 
-import React, {Component} from 'react';
-import {
-    AppRegistry,
-    Image,
-    StyleSheet,
-    Text,
-    View
-} from 'react-native';
+import React from 'react';
+import Root from "./the-basics/props";
 
-
-class MagicImage extends Component {
-    render() {
-        let picture = {
-            uri: 'https://avatars2.githubusercontent.com/u/10336931?v=3&s=460'
-        };
-        return (
-            <Image source={picture} style={{width: 177, height: 177}}/>
-        );
-    }
-}
-
-class InstructionsText extends Component {
-    render() {
-        return (
-            <Text style={styles.instructions}>{this.props.name}</Text>
-        );
-    }
-}
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    welcome: {
-        fontSize: 22,
-        textAlign: 'center',
-        margin: 10,
-        color: '#2D9FD8'
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-    },
-});
 
 function setup(): ReactClass<{}> {
-
-    class Root extends Component {
-        constructor() {
-            super();
-        }
-
-        render() {
-            return (
-                <View style={styles.container}>
-                    <Text style={styles.welcome}>
-                        Save you from anything!
-                    </Text>
-                    <InstructionsText name='To get started, edit index.android.js'/>
-                    <Text style={styles.instructions}>
-                        Double tap R on your keyboard to reload,{'\n'}
-                        Shake or press menu button for dev menu
-                    </Text>
-                    <MagicImage/>
-                </View>
-            );
-        }
-    }
-
     return Root;
-
 }
 
 module.exports = setup;

@@ -16,24 +16,30 @@ var _reactNative=require('react-native');function _interopRequireDefault(obj){re
 MagicImage=function(_Component){_inherits(MagicImage,_Component);function MagicImage(){_classCallCheck(this,MagicImage);return _possibleConstructorReturn(this,(MagicImage.__proto__||Object.getPrototypeOf(MagicImage)).apply(this,arguments));}_createClass(MagicImage,[{key:'render',value:function render()
 {
 var picture={
-uri:'https://ojywsusoq.qnssl.com/recall_fragments_of_crossgate_cover.jpg'};
+uri:'https://avatars2.githubusercontent.com/u/10336931?v=3&s=460'};
 
 return(
-_react2.default.createElement(_reactNative.Image,{source:picture,style:{width:277,height:177}}));
+_react2.default.createElement(_reactNative.Image,{source:picture,style:{width:177,height:177}}));
 
 }}]);return MagicImage;}(_react.Component);var
 
 
-ReactNativeLife=function(_Component2){_inherits(ReactNativeLife,_Component2);function ReactNativeLife(){_classCallCheck(this,ReactNativeLife);return _possibleConstructorReturn(this,(ReactNativeLife.__proto__||Object.getPrototypeOf(ReactNativeLife)).apply(this,arguments));}_createClass(ReactNativeLife,[{key:'render',value:function render()
+InstructionsText=function(_Component2){_inherits(InstructionsText,_Component2);function InstructionsText(){_classCallCheck(this,InstructionsText);return _possibleConstructorReturn(this,(InstructionsText.__proto__||Object.getPrototypeOf(InstructionsText)).apply(this,arguments));}_createClass(InstructionsText,[{key:'render',value:function render()
+{
+return(
+_react2.default.createElement(_reactNative.Text,{style:styles.instructions},this.props.name));
+
+}}]);return InstructionsText;}(_react.Component);var
+
+
+ReactNativeLife=function(_Component3){_inherits(ReactNativeLife,_Component3);function ReactNativeLife(){_classCallCheck(this,ReactNativeLife);return _possibleConstructorReturn(this,(ReactNativeLife.__proto__||Object.getPrototypeOf(ReactNativeLife)).apply(this,arguments));}_createClass(ReactNativeLife,[{key:'render',value:function render()
 {
 return(
 _react2.default.createElement(_reactNative.View,{style:styles.container},
 _react2.default.createElement(_reactNative.Text,{style:styles.welcome},'Save you from anything!'),
 
 
-_react2.default.createElement(_reactNative.Text,{style:styles.instructions},'To get started, edit index.android.js'),
-
-
+_react2.default.createElement(InstructionsText,{name:'To get started, edit index.android.js'}),
 _react2.default.createElement(_reactNative.Text,{style:styles.instructions},'Double tap R on your keyboard to reload,',
 '\n','Shake or press menu button for dev menu'),
 

@@ -25,7 +25,8 @@
 'use strict';
 
 import React from 'react';
-import Root from "./the-basics/props";
+// import Root from "./the-basics/props/props";
+import Root from "./the-basics/state/state";
 
 
 function setup(): ReactClass<{}> {

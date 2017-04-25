@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     },
 });
 
-var Props = {
+const Props = {
     styles: styles,
     MagicImage: MagicImage,
     InstructionsText: InstructionsText

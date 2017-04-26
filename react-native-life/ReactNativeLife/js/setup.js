@@ -26,7 +26,8 @@
 
 import React from 'react';
 // import Root from "./the-basics/props/props";
-import Root from "./the-basics/state/state";
+// import Root from "./the-basics/state/state";
+import Root from "./the-basics/style/style";
 
 
 function setup(): ReactClass<{}> {

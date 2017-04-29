@@ -31,7 +31,8 @@ import React from 'react';
 // import Root from "./the-basics/style/style";
 // import Root from "./the-basics/height-and-width/heightAndWidth";
 // import Root from "./the-basics/layout-with-flexbox/flexbox";
-import Root from "./the-basics/handling-text-input/handleText";
+// import Root from "./the-basics/handling-text-input/handleText";
+import Root from "./the-basics/using-a-scrollview/usingScrollView";
 
 
 function setup(): ReactClass<{}> {

@@ -3,7 +3,7 @@
  */
 
 import React, {Component} from 'react';
-import {FetchPromiseView} from "./lib/Networking";
+import {FetchPromiseView, FetchAsyncView} from "./lib/Networking";
 
 class Root extends Component {
     constructor() {
@@ -12,7 +12,7 @@ class Root extends Component {
 
     render() {
         return (
-            <FetchPromiseView/>
+            <FetchAsyncView/>
         );
     }
 }

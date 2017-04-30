@@ -76,7 +76,6 @@ class FetchAsyncView extends Component {
     constructor() {
         super();
         this.state = {content: 'Waiting for the fetching'};
-        this._this = this;
     }
 
     async fetchAsync() {
@@ -112,9 +111,55 @@ class FetchAsyncView extends Component {
 
 }
 
+class XMLHttpRequestView extends Component {
+
+    constructor() {
+        super();
+        this.state = {content: 'Waiting for the fetching'};
+    }
+
+    handleXMLHttpRequest() {
+        let request = new XMLHttpRequest();
+        request.onreadystatechange = e => {
+            if (request.readyState !== 4) {
+                return;
+            }
+            if (request.status === 200) {
+                this.setState({content: request.responseText});
+                console.log('success', request.responseText);
+            } else {
+                console.warn('error');
+            }
+        };
+        request.open('GET', URL);
+        request.send();
+    }
+
+    render() {
+        this.handleXMLHttpRequest();
+        return (
+            <View style={{
+                flex: 1,
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}>
+                <Text style={{
+                    fontSize: 16,
+                    color: 'steelblue'
+                }}>
+                    {this.state.content}
+                </Text>
+            </View>
+        );
+    }
+
+}
+
 const Networking = {
     FetchPromiseView: FetchPromiseView,
-    FetchAsyncView: FetchAsyncView
+    FetchAsyncView: FetchAsyncView,
+    XMLHttpRequestView: XMLHttpRequestView
 };
 
 module.exports = Networking;

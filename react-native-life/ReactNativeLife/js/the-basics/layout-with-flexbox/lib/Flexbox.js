@@ -44,7 +44,7 @@ class FlexboxJustifyContentView extends Component {
 
 /**
  * 辅轴布局，辅轴 = flexDirection 指定的反方向（ flexDirection: 'column'，辅轴 = 'row' ）
- * justifyContent:
+ * alignItems:
  * flex-start
  * center
  * flex-end

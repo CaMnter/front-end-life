@@ -14,16 +14,20 @@ import {
 
 class TouchableViews extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {count: 0};
     }
 
     onPressButton() {
-
+        this.setState({count: ++this.state.count});
+        console.log('[onPressButton]   [state] = ', this.state);
     }
 
     render() {
+        let count = this.state.count;
+        console.log('[render]   [count] = ', this.state.count);
+        let onPressButtonBind = this.onPressButton.bind(this)
         return (
             <View style={{
                 flex: 1,
@@ -31,30 +35,30 @@ class TouchableViews extends Component {
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
-                <TouchableHighlight onPress={this.onPressButton}>
+                <TouchableHighlight onPress={onPressButtonBind}>
                     <Text style={{
                         fontSize: 16,
                         color: 'steelblue'
                     }}>
-                        TouchableHighlight + {this.state.count}
+                        TouchableHighlight + {count}
                     </Text>
                 </TouchableHighlight>
-                <TouchableNativeFeedback onPress={this.onPressButton}>
+                <TouchableNativeFeedback onPress={onPressButtonBind}>
                     <Text style={{
                         marginTop: 10,
                         fontSize: 16,
                         color: 'steelblue'
                     }}>
-                        TouchableNativeFeedback + {this.state.count}
+                        TouchableNativeFeedback + {count}
                     </Text>
                 </TouchableNativeFeedback>
-                <TouchableOpacity onPress={this.onPressButton}>
+                <TouchableOpacity onPress={onPressButtonBind}>
                     <Text style={{
                         marginTop: 10,
                         fontSize: 16,
                         color: 'steelblue'
                     }}>
-                        TouchableOpacity + {this.state.count}
+                        TouchableOpacity + {count}
                     </Text>
                 </TouchableOpacity>
                 <TouchableWithoutFeedback onPress={this.onPressButton}>
@@ -63,7 +67,7 @@ class TouchableViews extends Component {
                         fontSize: 16,
                         color: 'steelblue'
                     }}>
-                        TouchableWithoutFeedback + {this.state.count}
+                        TouchableWithoutFeedback + {count}
                     </Text>
                 </TouchableWithoutFeedback>
             </View>

@@ -35,7 +35,8 @@ import React from 'react';
 // import Root from "./the-basics/using-a-scrollview/usingScrollView";
 // import Root from "./the-basics/using-a-listview/usingListView";
 // import Root from "./the-basics/networking/networking";
-import Root from "./guides/handling-touches/handlingTouches";
+// import Root from "./guides/handling-touches/handlingTouches";
+import Root from "./guides/animations/animations";
 
 
 function setup(): ReactClass<{}> {

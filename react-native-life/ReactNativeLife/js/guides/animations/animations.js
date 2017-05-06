@@ -3,7 +3,7 @@
  */
 
 import React, {Component} from 'react';
-import {FadeInView} from "./lib/Animations";
+import {FadeInView, LayoutAnimationView} from "./lib/Animations";
 import {Text} from "react-native";
 
 class Root extends Component {
@@ -13,11 +13,12 @@ class Root extends Component {
 
     render() {
         return (
-            <FadeInView style={{width: 250, height: 50, backgroundColor: 'powderblue'}}>
-                <Text style={{fontSize: 28, textAlign: 'center', margin: 10}}>
-                    FadeInView
-                </Text>
-            </FadeInView>
+            // <FadeInView style={{width: 250, height: 50, backgroundColor: 'powderblue'}}>
+            //     <Text style={{fontSize: 28, textAlign: 'center', margin: 10}}>
+            //         FadeInView
+            //     </Text>
+            // </FadeInView>
+            <LayoutAnimationView/>
         );
     }
 }

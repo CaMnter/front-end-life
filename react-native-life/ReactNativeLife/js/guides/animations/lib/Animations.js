@@ -33,7 +33,7 @@ class FadeInView extends Component {
     }
 }
 
-// 不设置上的话 UIManager
+// 一定要设置 UIManager
 var UIManager = require('UIManager');
 class LayoutAnimationView extends Component {
     constructor(props) {

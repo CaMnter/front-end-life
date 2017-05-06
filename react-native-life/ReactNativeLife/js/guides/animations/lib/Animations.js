@@ -5,6 +5,7 @@
 import React, {Component} from 'react';
 import {Animated, LayoutAnimation, TouchableOpacity, View} from "react-native";
 
+
 class FadeInView extends Component {
     constructor(props) {
         super(props);
@@ -32,11 +33,15 @@ class FadeInView extends Component {
     }
 }
 
+// 不设置上的话 UIManager
+var UIManager = require('UIManager');
 class LayoutAnimationView extends Component {
     constructor(props) {
         super(props);
         this.state = {w: 100, h: 100};
         this.onPressBind = this.onPress.bind(this);
+        UIManager.setLayoutAnimationEnabledExperimental &&
+        UIManager.setLayoutAnimationEnabledExperimental(true);
     }
 
     componentWillMount() {

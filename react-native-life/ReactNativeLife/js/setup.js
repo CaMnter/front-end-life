@@ -37,7 +37,8 @@ import React from 'react';
 // import Root from "./the-basics/networking/networking";
 // import Root from "./guides/handling-touches/handlingTouches";
 // import Root from "./guides/animations/animations";
-import Root from "./guides/navigation/navigation"
+// import Root from "./guides/navigation/navigation"
+import Root from "./guides/images/images"
 
 
 function setup(): ReactClass<{}> {

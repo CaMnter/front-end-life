@@ -16,3 +16,5 @@ class Root extends Component{
         );
     }
 }
+
+module.exports = Root;

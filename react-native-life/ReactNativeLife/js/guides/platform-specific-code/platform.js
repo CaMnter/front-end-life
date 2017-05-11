@@ -1,8 +1,8 @@
 /**
  * @author CaMnter
  */
-
-import {SimplePlatformView} from 'lib/Platform';
+import React, {Component} from 'react';
+import {PlatformStyleView} from './lib/Platform';
 
 class Root extends Component {
     constructor() {
@@ -11,7 +11,7 @@ class Root extends Component {
 
     render() {
         return (
-            <SimplePlatformView/>
+            <PlatformStyleView/>
         );
     }
 }

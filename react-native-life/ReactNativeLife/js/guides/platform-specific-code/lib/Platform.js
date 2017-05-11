@@ -3,9 +3,9 @@
  */
 
 import React, {Component} from 'react';
-import {Text, View, Platform, Stylesheet} from "react-native";
+import {Text, View, Platform, StyleSheet} from "react-native";
 
-let simpleStyle = Stylesheet.create({
+const simpleStyle = StyleSheet.create({
     root: {
         flex: 1,
         flexDirection: 'column',
@@ -13,7 +13,7 @@ let simpleStyle = Stylesheet.create({
         alignItems: 'center'
     },
     text: {
-        fontSize: Platform.OS == 'ios' ? 20 : 14,
+        fontSize: Platform.OS == 'ios' ? 40 : 20,
         color: 'mediumpurple'
     }
 });
@@ -34,7 +34,7 @@ class SimplePlatformView extends Component {
     }
 }
 
-let platformStyle = Stylesheet.create({
+const platformStyle = StyleSheet.create({
     root: {
         flex: 1,
         flexDirection: 'column',
@@ -57,7 +57,7 @@ let platformStyle = Stylesheet.create({
     }
 });
 
-class PlatformStyle extends Component {
+class PlatformStyleView extends Component {
     constructor() {
         super();
     }
@@ -77,9 +77,9 @@ class PlatformStyle extends Component {
 // Xxx.android.js
 // const Xxx = require('./Xxx');
 
-const Platform = {
+const ZPlatform = {
     SimplePlatformView: SimplePlatformView,
-    PlatformStyle: PlatformStyle
+    PlatformStyleView: PlatformStyleView
 }
 
-module.exports = Platform;
+module.exports = ZPlatform;

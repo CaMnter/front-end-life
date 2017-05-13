@@ -41,7 +41,8 @@ import React from 'react';
 // import Root from "./guides/images/images"
 // import Root from "./guides/platform-specific-code/platform"
 // import Root from "./guides/platform-specific-code/platform"
-import Root from "./guides/accessibility/accessibility"
+// import Root from "./guides/accessibility/accessibility"
+import Root from "./guides/timers/timers"
 
 
 function setup(): ReactClass<{}> {

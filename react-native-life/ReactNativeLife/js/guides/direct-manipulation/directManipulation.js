@@ -3,7 +3,7 @@
  */
 
 import React, {Component} from 'react';
-import {CompositeView, DirectView} from "./lib/DirectManipulation";
+import {ClearTextInput, CompositeView, DirectView} from "./lib/DirectManipulation";
 import {ScrollView} from "react-native";
 
 class Root extends Component {
@@ -16,6 +16,7 @@ class Root extends Component {
             <ScrollView>
                 <DirectView/>
                 <CompositeView/>
+                <ClearTextInput/>
             </ScrollView>
         );
     }

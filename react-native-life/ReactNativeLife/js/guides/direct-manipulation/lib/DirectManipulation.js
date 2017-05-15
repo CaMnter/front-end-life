@@ -3,7 +3,7 @@
  */
 
 import React, {Component} from 'react';
-import {Text, TouchableOpacity, View, StyleSheet} from "react-native";
+import {Text, TouchableOpacity, View, StyleSheet, TextInput} from "react-native";
 
 /**
  * 直接 onPressIn={() => this.setState({buttonOpacity: 0.5})
@@ -63,6 +63,28 @@ class CompositeView extends Component {
     }
 }
 
+class ClearTextInput extends Component {
+    constructor(props) {
+        super(props);
+        this.clearText = this.clearText.bind(this);
+    }
+
+    clearText() {
+        this._component.setNativeProps({text: ''});
+    }
+
+    render() {
+        return (
+            <View>
+                <TextInput ref={component => this._component = component} style={styles.textInput}/>
+                <TouchableOpacity onPress={this.clearText}>
+                    <Text style={styles.clearButton}>Clear text</Text>
+                </TouchableOpacity>
+            </View>
+        );
+    }
+}
+
 const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
@@ -71,12 +93,25 @@ const styles = StyleSheet.create({
     },
     text: {
         color: 'white',
+    },
+    textInput: {
+        padding: 20,
+        color: 'skyblue',
+        backgroundColor: 'white'
+    },
+    clearButton: {
+        width: 85,
+        padding: 10,
+        color: 'white',
+        backgroundColor: '#FE242B'
     }
 });
 
+
 const DirectManipulation = {
     DirectView: DirectView,
-    CompositeView: CompositeView
+    CompositeView: CompositeView,
+    ClearTextInput: ClearTextInput
 };
 
 module.exports = DirectManipulation;

@@ -44,7 +44,8 @@ import React from 'react';
 // import Root from "./guides/accessibility/accessibility"
 // import Root from "./guides/timers/timers"
 // import Root from "./guides/direct-manipulation/directManipulation"
-import Root from "./components/activityindicator/activityIndicatorView"
+// import Root from "./components/activityindicator/activityIndicatorView"
+import Root from "./components/button/button"
 
 
 function setup(): ReactClass<{}> {

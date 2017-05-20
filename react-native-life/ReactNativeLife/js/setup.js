@@ -47,7 +47,8 @@ import React from 'react';
 // import Root from "./components/activityindicator/activityIndicatorView"
 // import Root from "./components/button/button"
 // import Root from "./components/datapickerios/datapickerios"
-import Root from "./components/drawerlayoutandroid/drawerlayoutandroid"
+// import Root from "./components/drawerlayoutandroid/drawerlayoutandroid"
+import Root from "./components/flatlist/flatlist"
 
 
 function setup(): ReactClass<{}> {

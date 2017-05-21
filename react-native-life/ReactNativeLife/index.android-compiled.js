@@ -41,7 +41,7 @@ _react2.default.createElement(_reactNative.Text,{style:styles.welcome},'Save you
 
 _react2.default.createElement(InstructionsText,{name:'To get started, edit index.android.js'}),
 _react2.default.createElement(_reactNative.Text,{style:styles.instructions},'Double tap R on your keyboard to reload,',
-'\n','Shake or press menu button for dev menu'),
+'\n','Shake or press menu Button for dev menu'),
 
 
 _react2.default.createElement(MagicImage,null)));

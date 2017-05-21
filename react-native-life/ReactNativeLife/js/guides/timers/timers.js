@@ -3,18 +3,30 @@
  */
 
 import React, {Component} from 'react';
-import {TimerMixinView} from "./lib/Timers";
+import  {Text, ToastAndroid, View} from 'react-native';
+import TimerMixin from 'react-timer-mixin';
 
-class Root extends Component {
-    constructor() {
-        super();
-    }
-
-    render() {
+var TimerMixinView = React.createClass({
+    mixins: [TimerMixin],
+    componentDidMount: function () {
+        this.setTimeout(
+            () => {
+                ToastAndroid.show('Save you from anything', ToastAndroid.SHORT);
+            },
+            2000
+        );
+    },
+    render(){
         return (
-            <TimerMixinView/>
+            <View>
+                <Text>TimerMixinView</Text>
+            </View>
         );
     }
-}
+});
 
-module.exports = Root;
+const Timers = {
+    TimerMixinView: TimerMixinView
+};
+
+module.exports = Timers;

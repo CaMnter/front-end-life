@@ -3,20 +3,36 @@
  */
 
 import React, {Component} from 'react';
-import {DrawerLayoutView} from "./lib/DrawerLayoutAndroid";
+import {DrawerLayoutAndroid, Text, View} from "react-native";
 
-class Root extends Component {
+class DrawerLayoutView extends Component {
 
     constructor() {
         super();
     }
 
     render() {
+        var navigationView = (
+            <View style={{flex: 1, backgroundColor: 'powderblue'}}>
+                <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>Save you from
+                    anything</Text>
+            </View>
+        );
         return (
-            <DrawerLayoutView/>
+            <DrawerLayoutAndroid
+                drawerWidth={300}
+                drawerPosition={DrawerLayoutAndroid.positions.Left}
+                renderNavigationView={() => navigationView}>
+                <View style={{flex: 1, alignItems: 'center'}}>
+                    <Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>Save</Text>
+                    <Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>You</Text>
+                </View>
+            </DrawerLayoutAndroid>
         );
     }
 
 }
 
-module.exports = Root;
+module.exports = {
+    DrawerLayoutView: DrawerLayoutView
+}

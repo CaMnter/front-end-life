@@ -47,7 +47,8 @@ import React from 'react';
 // import Root from "./Components/Button/index"
 // import Root from "./Components/DatepickerIOS/index"
 // import Root from "./Components/DrawerlayoutAndroid/index"
-import Root from "./Components/FlatList/index"
+// import Root from "./Components/FlatList/index"
+import Root from "./Components/Image/index"
 
 
 function setup(): ReactClass<{}> {

@@ -3,9 +3,10 @@
  */
 
 import React, {Component} from 'react';
-import {FlatListView, FlatListItem} from "./FlatList";
+import {FlatListExample, FlatListView, FlatListItem} from "./FlatList";
 
-export default class Root extends Component {
+
+class Root extends Component {
 
     constructor() {
         super();
@@ -13,8 +14,10 @@ export default class Root extends Component {
 
     render() {
         return (
-            <FlatListView/>
+            <FlatListExample/>
         );
     }
 
 }
+
+module.exports = Root;

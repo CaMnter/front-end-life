@@ -5,9 +5,9 @@
 import React, {Component} from 'react';
 import {Image, ScrollView, Text} from "react-native";
 
-let imgA = require('../../img/img_girl_1.jpg');
-let imgB = require('../../img/img_girl_2.jpg');
-let imgC = require('../../img/img_girl_3.jpg');
+let imgA = require('../../Img/img_girl_1.jpg');
+let imgB = require('../../Img/img_girl_2.jpg');
+let imgC = require('../../Img/img_girl_3.jpg');
 
 class ZScrollView extends Component {
     render() {

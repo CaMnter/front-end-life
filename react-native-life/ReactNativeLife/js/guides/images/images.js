@@ -5,8 +5,8 @@
 import React, {Component} from 'react';
 import {Image, ScrollView, Text, View} from "react-native";
 
-let imgA = require('../../img/img_girl_1.jpg');
-let facebookLogo = 'https://facebook.github.io/react/img/logo_og.png';
+let imgA = require('../../Img/img_girl_1.jpg');
+let facebookLogo = 'https://facebook.github.io/react/Img/logo_og.png';
 
 class ImageViews extends Component {
     constructor(props) {
@@ -29,7 +29,7 @@ class ImageViews extends Component {
                         </Text>
                     </Image>
                     <Image style={{width: 200, height: 200}}
-                           source={require('../../img/img_girl_2.jpg')}/>
+                           source={require('../../Img/img_girl_2.jpg')}/>
                     <Image source={{uri: facebookLogo}}
                            style={{width: 200, height: 200}}/>
                     <Image source={ {

@@ -26,28 +26,28 @@
 
 import React from 'react';
 
-// import Root from "./basics/Props/index";
-// import Root from "./basics/State/index";
-// import Root from "./basics/Style/index";
-// import Root from "./basics/HeightAndWidth/index";
-// import Root from "./basics/LayoutWithFlexbox/index";
-// import Root from "./basics/HandlingText/index";
-// import Root from "./basics/Scrollview/index";
-// import Root from "./basics/Listview/index";
-// import Root from "./basics/Networking/index";
-// import Root from "./guides/HandlingTouches/index";
-// import Root from "./guides/Animations/index";
-// import Root from "./guides/Navigation/index"
-// import Root from "./guides/Images/index"
-// import Root from "./guides/PlatformSpecificCode/index"
-// import Root from "./guides/Accessibility/index"
-// import Root from "./guides/Timers/index"
-// import Root from "./guides/DirectManipulation/index"
-// import Root from "./components/ActivityIndicator/index"
-// import Root from "./components/Button/index"
-// import Root from "./components/DatepickerIOS/index"
-// import Root from "./components/DrawerlayoutAndroid/index"
-import Root from "./components/FlatList/index"
+// import Root from "./Basics/Props/index";
+// import Root from "./Basics/State/index";
+// import Root from "./Basics/Style/index";
+// import Root from "./Basics/HeightAndWidth/index";
+// import Root from "./Basics/LayoutWithFlexbox/index";
+// import Root from "./Basics/HandlingText/index";
+// import Root from "./Basics/Scrollview/index";
+// import Root from "./Basics/Listview/index";
+// import Root from "./Basics/Networking/index";
+// import Root from "./Guides/HandlingTouches/index";
+// import Root from "./Guides/Animations/index";
+// import Root from "./Guides/Navigation/index"
+// import Root from "./Guides/Images/index"
+// import Root from "./Guides/PlatformSpecificCode/index"
+// import Root from "./Guides/Accessibility/index"
+// import Root from "./Guides/Timers/index"
+// import Root from "./Guides/DirectManipulation/index"
+// import Root from "./Components/ActivityIndicator/index"
+// import Root from "./Components/Button/index"
+// import Root from "./Components/DatepickerIOS/index"
+// import Root from "./Components/DrawerlayoutAndroid/index"
+import Root from "./Components/FlatList/index"
 
 
 function setup(): ReactClass<{}> {

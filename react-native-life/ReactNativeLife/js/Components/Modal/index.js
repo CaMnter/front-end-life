@@ -3,17 +3,17 @@
  */
 
 import React, {Component} from 'react';
-import {SimpleModal} from "./Modal";
+import {SimpleModal, ModalExample} from "./Modal";
 
-class Root extends Component{
+class Root extends Component {
 
     constructor(props) {
         super(props);
     }
 
-    render(){
-        return(
-            <SimpleModal/>
+    render() {
+        return (
+            <ModalExample/>
         );
     }
 

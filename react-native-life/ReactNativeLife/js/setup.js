@@ -50,7 +50,8 @@ import React from 'react';
 // import Root from "./Components/FlatList/index"
 // import Root from "./Components/Image/index"
 // import Root from "./Components/KeyboardAvoidingView/index"
-import Root from "./Components/ListView/index"
+// import Root from "./Components/ListView/index"
+import Root from "./Components/Modal/index"
 
 
 function setup(): ReactClass<{}> {

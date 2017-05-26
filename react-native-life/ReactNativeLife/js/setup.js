@@ -52,7 +52,8 @@ import React from 'react';
 // import Root from "./Components/KeyboardAvoidingView/index"
 // import Root from "./Components/ListView/index"
 // import Root from "./Components/Modal/index"
-import Root from "./Components/Picker/index"
+// import Root from "./Components/Picker/index"
+import Root from "./Components/ProgressBarAndroid/index"
 
 
 function setup(): ReactClass<{}> {

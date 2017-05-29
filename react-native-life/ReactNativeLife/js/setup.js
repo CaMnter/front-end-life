@@ -56,7 +56,8 @@ import React from 'react';
 // import Root from "./Components/ProgressBarAndroid/index"
 // import Root from "./Components/RefreshControl/index"
 // import Root from "./Components/ScrollView/index"
-import Root from "./Components/SectionList/index"
+// import Root from "./Components/SectionList/index"
+import Root from "./Components/Slider/index"
 
 
 function setup(): ReactClass<{}> {

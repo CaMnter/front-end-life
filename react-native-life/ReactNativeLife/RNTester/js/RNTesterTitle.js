@@ -20,10 +20,15 @@ var {
 } = ReactNative;
 
 class RNTesterTitle extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.text}>
+                <Text style={[styles.text, this.props.titleStyle]}>
                     {this.props.title}
                 </Text>
             </View>
@@ -46,7 +51,6 @@ var styles = StyleSheet.create({
     text: {
         fontSize: 19,
         fontWeight: '500',
-        textAlign: 'center'
     },
 });
 

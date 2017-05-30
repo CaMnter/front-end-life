@@ -38,7 +38,9 @@ class ExamplePager extends React.Component {
 
     _renderPager() {
         return (
-            <RNTesterPage title={this.props.pagerTitle}>
+            <RNTesterPage
+                title={this.props.pagerTitle}
+                titleStyle={this.props.pagerTitleStyle}>
                 {[...this._renderBlock(this.props.pagerBlocks)]}
             </RNTesterPage>
         );

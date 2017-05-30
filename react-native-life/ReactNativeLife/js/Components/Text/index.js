@@ -4,6 +4,7 @@
 
 import * as React from 'react';
 import {examples} from './Text';
+import {StyleSheet} from 'react-native'
 import {ExamplePager} from '../../core';
 
 class Root extends React.Component {
@@ -15,6 +16,7 @@ class Root extends React.Component {
     render() {
         return (
             <ExamplePager
+                pagerTitleStyle={{textAlign: 'center',}}
                 pagerTitle={examples.pagerTitle}
                 pagerBlocks={examples.pagerBlocks}/>
         );

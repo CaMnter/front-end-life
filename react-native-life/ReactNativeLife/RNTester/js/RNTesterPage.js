@@ -46,7 +46,9 @@ class RNTesterPage extends React.Component {
             wrapperProps.keyboardDismissMode = 'interactive';
         }
         var title = this.props.title ?
-            <RNTesterTitle title={this.props.title}/> :
+            <RNTesterTitle
+                title={this.props.title}
+                titleStyle={this.props.titleStyle}/> :
             null;
         var spacer = this.props.noSpacer ? null : <View style={styles.spacer}/>;
         return (

@@ -41,10 +41,12 @@ var styles = StyleSheet.create({
         height: 45,
         padding: 10,
         backgroundColor: 'white',
+
     },
     text: {
         fontSize: 19,
         fontWeight: '500',
+        textAlign: 'center'
     },
 });
 

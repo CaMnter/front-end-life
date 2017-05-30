@@ -23,8 +23,11 @@ class ExamplePager extends React.Component {
         super(props);
     }
 
-    _createBlock = (block) =>
-        <RNTesterBlock title={block.title}>
+    /**
+     * 需要添加  props.key 不然会有警告
+     */
+    _createBlock = (block, index) =>
+        <RNTesterBlock title={block.title} key={index}>
             {block.render()}
         </RNTesterBlock>;
 

@@ -432,6 +432,64 @@ const styles = StyleSheet.create({
     }
 });
 
+const examples = {
+    pagerTitle: "StatusBar examples",
+    pagerBlocks: [
+        {
+            title: 'StatusBar hidden',
+            render() {
+                return <StatusBarHiddenExample />;
+            },
+        },
+        {
+            title: 'StatusBar style',
+            render() {
+                return <StatusBarStyleExample />;
+            }
+        },
+        {
+            title: 'StatusBar network activity indicator',
+            render() {
+                return <StatusBarNetworkActivityExample />;
+            }
+        },
+        {
+            title: 'StatusBar background color',
+            render() {
+                return <StatusBarBackgroundColorExample />;
+            }
+        },
+        {
+            blockTitle: 'StatusBar background color',
+            render() {
+                return <StatusBarTranslucentExample />;
+            }
+        },
+        {
+            title: 'StatusBar static API',
+            render() {
+                return <StatusBarStaticIOSExample />;
+            }
+        },
+        {
+            title: 'StatusBar static API',
+            render() {
+                return <StatusBarStaticAndroidExample />;
+            }
+        },
+        {
+            title: 'StatusBar dimensions',
+            render() {
+                return (
+                    <View>
+                        <Text>Height (Android only): {StatusBar.currentHeight} pts</Text>
+                    </View>
+                );
+            }
+        }
+    ]
+};
+
 module.exports = {
-    StatusBarExample: StatusBarExample
+    examples: examples
 };

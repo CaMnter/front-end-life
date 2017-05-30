@@ -2,8 +2,9 @@
  * @author CaMnter
  */
 
-import * as React from "react";
-import {StatusBarExample} from "./StatusBar";
+import * as React from 'react';
+import {examples} from './StatusBar';
+import {ExamplePager} from '../../core';
 
 class Root extends React.Component {
 
@@ -13,7 +14,9 @@ class Root extends React.Component {
 
     render() {
         return (
-            <StatusBarExample/>
+            <ExamplePager
+                pagerTitle={examples.pagerTitle}
+                pagerBlocks={examples.pagerBlocks}/>
         );
     }
 }

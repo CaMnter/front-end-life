@@ -4,7 +4,6 @@
 
 import * as React from 'react';
 import {examples} from './Text';
-import {StyleSheet} from 'react-native'
 import {ExamplePager} from '../../core';
 
 class Root extends React.Component {

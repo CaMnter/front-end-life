@@ -52,6 +52,24 @@ class ExamplePager extends React.Component {
 
 }
 
+class SmartPager extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <ExamplePager
+                pagerTitleStyle={{textAlign: 'center',}}
+                pagerTitle={this.props.examples.pagerTitle}
+                pagerBlocks={this.props.examples.pagerBlocks}/>
+        );
+    }
+
+}
+
 module.exports = {
-    ExamplePager: ExamplePager
+    ExamplePager: ExamplePager,
+    SmartPager: SmartPager
 };

@@ -61,7 +61,8 @@ import React from 'react';
 // import Root from "./Components/StatusBar/index"
 // import Root from "./Components/Text/index"
 // import Root from "./Components/TextInput/index"
-import Root from "./Components/ToolbarAndroid/index"
+// import Root from "./Components/ToolbarAndroid/index"
+import Root from "./Components/View/index"
 
 
 function setup(): ReactClass<{}> {

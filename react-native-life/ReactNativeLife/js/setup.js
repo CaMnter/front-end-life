@@ -35,6 +35,7 @@ import React from 'react';
 // import Root from "./Basics/Scrollview/index";
 // import Root from "./Basics/Listview/index";
 // import Root from "./Basics/Networking/index";
+
 // import Root from "./Guides/HandlingTouches/index";
 // import Root from "./Guides/Animations/index";
 // import Root from "./Guides/Navigation/index"
@@ -43,6 +44,7 @@ import React from 'react';
 // import Root from "./Guides/Accessibility/index"
 // import Root from "./Guides/Timers/index"
 // import Root from "./Guides/DirectManipulation/index"
+
 // import Root from "./Components/ActivityIndicator/index"
 // import Root from "./Components/Button/index"
 // import Root from "./Components/DatepickerIOS/index"
@@ -64,7 +66,9 @@ import React from 'react';
 // import Root from "./Components/ToolbarAndroid/index"
 // import Root from "./Components/View/index"
 // import Root from "./Components/ViewPagerAndroid/index"
-import Root from "./Components/WebView/index"
+// import Root from "./Components/WebView/index"
+
+import Root from "./APIs/AccessibilityInfo/index"
 
 
 function setup(): ReactClass<{}> {

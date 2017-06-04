@@ -63,7 +63,8 @@ import React from 'react';
 // import Root from "./Components/TextInput/index"
 // import Root from "./Components/ToolbarAndroid/index"
 // import Root from "./Components/View/index"
-import Root from "./Components/ViewPagerAndroid/index"
+// import Root from "./Components/ViewPagerAndroid/index"
+import Root from "./Components/WebView/index"
 
 
 function setup(): ReactClass<{}> {

@@ -68,7 +68,8 @@ import React from 'react';
 // import Root from "./Components/ViewPagerAndroid/index"
 // import Root from "./Components/WebView/index"
 
-import Root from "./APIs/AccessibilityInfo/index"
+// import Root from "./APIs/AccessibilityInfo/index"
+import Root from "./APIs/Alert/index"
 
 
 function setup(): ReactClass<{}> {

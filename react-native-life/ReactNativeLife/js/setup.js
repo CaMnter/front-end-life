@@ -69,7 +69,8 @@ import React from 'react';
 // import Root from "./Components/WebView/index"
 
 // import Root from "./APIs/AccessibilityInfo/index"
-import Root from "./APIs/Alert/index"
+// import Root from "./APIs/Alert/index"
+import Root from "./APIs/Animated/index"
 
 
 function setup(): ReactClass<{}> {

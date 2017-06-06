@@ -27,13 +27,12 @@ class ExamplePager extends React.Component {
      * 需要添加  props.key 不然会有警告
      */
     _createBlock = (block, index) =>
-        <RNTesterBlock title={block.title} key={index}>
+        <RNTesterBlock title={block.title} key={index} description={block.description}>
             {block.render()}
         </RNTesterBlock>;
 
     _renderBlock(blocks: Array) {
         return Array.from(blocks).map(this._createBlock);
-        console.log(blocks);
     }
 
     _renderPager() {

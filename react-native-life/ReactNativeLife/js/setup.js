@@ -71,7 +71,8 @@ import React from 'react';
 // import Root from "./APIs/AccessibilityInfo/index"
 // import Root from "./APIs/Alert/index"
 // import Root from "./APIs/Animated/index"
-import Root from "./APIs/AppState/index"
+// import Root from "./APIs/AppState/index"
+import Root from "./APIs/AsyncStorage/index"
 
 
 function setup(): ReactClass<{}> {

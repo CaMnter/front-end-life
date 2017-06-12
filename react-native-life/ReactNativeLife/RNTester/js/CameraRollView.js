@@ -69,9 +69,9 @@ let propTypes = {
 
 };
 
-class CameraRollView extends Component {
-
-    propTypes: propTypes;
+const CameraRollView = React.createClass({
+    // $FlowFixMe(>=0.41.0)
+    propTypes: propTypes,
 
     getDefaultProps(): Object {
         return {
@@ -90,7 +90,7 @@ class CameraRollView extends Component {
                 );
             },
         };
-    }
+    },
 
     getInitialState() {
         let ds = new ListView.DataSource({rowHasChanged: this._rowHasChanged});
@@ -103,7 +103,7 @@ class CameraRollView extends Component {
             loadingMore: false,
             dataSource: ds,
         };
-    }
+    },
 
     /**
      * This should be called when the image renderer is changed to tell the
@@ -115,17 +115,17 @@ class CameraRollView extends Component {
             // $FlowFixMe(>=0.41.0)
             groupByEveryN(this.state.assets, this.props.imagesPerRow)
         );
-    }
+    },
 
     componentDidMount() {
         this.fetch();
-    }
+    },
 
     componentWillReceiveProps(nextProps: { groupTypes?: string }) {
         if (this.props.groupTypes !== nextProps.groupTypes) {
             this.fetch(true);
         }
-    }
+    },
 
     async _fetch(clear?: boolean) {
         if (clear) {
@@ -168,7 +168,7 @@ class CameraRollView extends Component {
         } catch (e) {
             logError(e);
         }
-    }
+    },
 
     /**
      * Fetches more images from the camera roll. If clear is set to true, it will
@@ -180,7 +180,7 @@ class CameraRollView extends Component {
                 this._fetch(clear);
             });
         }
-    }
+    },
 
     render() {
         return (
@@ -193,7 +193,7 @@ class CameraRollView extends Component {
                 enableEmptySections
             />
         );
-    }
+    },
 
     _rowHasChanged(r1: Array<Image>, r2: Array<Image>): boolean {
         if (r1.length !== r2.length) {
@@ -207,14 +207,14 @@ class CameraRollView extends Component {
         }
 
         return false;
-    }
+    },
 
     _renderFooterSpinner() {
         if (!this.state.noMore) {
             return <ActivityIndicator />;
         }
         return null;
-    }
+    },
 
     // rowData is an array of images
     _renderRow(rowData: Array<Image>, sectionID: string, rowID: string) {
@@ -231,7 +231,7 @@ class CameraRollView extends Component {
                 {images}
             </View>
         );
-    }
+    },
 
     _appendAssets(data: Object) {
         let assets = data.edges;
@@ -251,7 +251,7 @@ class CameraRollView extends Component {
         }
 
         this.setState(newState);
-    }
+    },
 
     _onEndReached() {
         if (!this.state.noMore) {
@@ -259,7 +259,7 @@ class CameraRollView extends Component {
         }
     }
 
-}
+});
 
 const styles = StyleSheet.create({
     row: {

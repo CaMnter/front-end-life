@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        // We need to set ES6 target otherwise instantiating ChromeDebugSession
+        // throws "Class constructor ChromeDebugSession cannot be invoked without 'new'" at runtime
+        "target": "es6",
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "removeComments": false,
+        "noFallthroughCasesInSwitch": true,
+        "jsx": "react"
+    },
+    "include": [
+        "./js/*"
+    ],
+    "exclude": [
+        "./.idea/*"
+    ]
+}

@@ -2,7 +2,12 @@
  * @author CaMnter
  */
 
-import React from "react";
+import React, {Component} from 'react';
+import {
+    StyleSheet,
+    Text,
+    TouchableHighlight,
+} from 'react-native';
 import RNTesterPage from '../RNTester/js/RNTesterPage';
 import RNTesterBlock from '../RNTester/js/RNTesterBlock';
 
@@ -17,7 +22,7 @@ import RNTesterBlock from '../RNTester/js/RNTesterBlock';
  *      ]
  * }
  */
-class ExamplePager extends React.Component {
+class ExamplePager extends Component {
 
     constructor(props) {
         super(props);
@@ -51,7 +56,7 @@ class ExamplePager extends React.Component {
 
 }
 
-class SmartPager extends React.Component {
+class SmartPager extends Component {
 
     constructor(props) {
         super(props);
@@ -68,7 +73,57 @@ class SmartPager extends React.Component {
 
 }
 
+/**
+ * props = {
+ *      textContent: String
+ * }
+ */
+class SmartTouchableHighlight extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        let highLightProps = {
+            underlayColor: '#e5e5e5',
+            style: [style.touchableHighlight]
+        };
+        return (
+            <TouchableHighlight
+                {...highLightProps}
+                onPress={this.props.onPress}>
+                <Text
+                    style={[style.touchableHighlightText]}>
+                    {this.props.textContent}
+                </Text>
+            </TouchableHighlight>
+        );
+    }
+
+}
+
+const style = StyleSheet.create({
+    touchableHighlight: {
+        flex: 1,
+        flexWrap: "wrap",
+        flexDirection: 'row',
+        justifyContent: 'center'
+    },
+    touchableHighlightText: {
+        flex: 1,
+        flexGrow: 1,
+        padding: 10,
+        textAlign: 'center',
+        flexWrap: "wrap",
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+});
+
 module.exports = {
     ExamplePager: ExamplePager,
-    SmartPager: SmartPager
+    SmartPager: SmartPager,
+    SmartTouchableHighlight: SmartTouchableHighlight
 };

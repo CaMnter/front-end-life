@@ -11,6 +11,7 @@ import {
     StyleSheet,
     ToastAndroid
 } from 'react-native';
+import {SmartTouchableHighlight} from "../../core";
 
 class ClipboardExample extends Component {
 
@@ -54,22 +55,12 @@ class ClipboardExample extends Component {
         };
         return (
             <View>
-                <TouchableHighlight
-                    {...highLightProps}
-                    onPress={this._setClipboardContent.bind(this)}>
-                    <Text
-                        style={[style.view]}>
-                        Set Clipboard
-                    </Text>
-                </TouchableHighlight>
-                <TouchableHighlight
-                    {...highLightProps}
-                    onPress={this._getClipboardContent.bind(this)}>
-                    <Text
-                        style={[style.view]}>
-                        Get Clipboard
-                    </Text>
-                </TouchableHighlight>
+                <SmartTouchableHighlight
+                    textContent='Set Clipboard'
+                    onPress={this._setClipboardContent.bind(this)}/>
+                <SmartTouchableHighlight
+                    textContent='Get Clipboard'
+                    onPress={this._getClipboardContent.bind(this)}/>
                 <Text
                     style={[style.view]}>
                     {'[magicNumber] = ' + this.state.magicNumber + '\n' +

@@ -77,7 +77,8 @@ import React from 'react';
 // import Root from "./APIs/Clipboard/index"
 // import Root from "./APIs/CameraRoll/index"
 // import Root from "./APIs/Touchable/index"
-import Root from "./APIs/DatePickerAndroid/index"
+// import Root from "./APIs/DatePickerAndroid/index"
+import Root from "./APIs/Geolocation/index"
 
 
 function setup(): ReactClass<{}> {

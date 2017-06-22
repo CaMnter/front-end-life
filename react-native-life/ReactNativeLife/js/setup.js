@@ -79,7 +79,8 @@ import React from 'react';
 // import Root from "./APIs/Touchable/index"
 // import Root from "./APIs/DatePickerAndroid/index"
 // import Root from "./APIs/Geolocation/index"
-import Root from "./APIs/ImageCapInsets/ImageCapInsetsExample"
+// import Root from "./APIs/ImageCapInsets/index"
+import Root from "./APIs/Keyboard/index"
 
 
 function setup(): ReactClass<{}> {

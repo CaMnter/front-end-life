@@ -80,7 +80,8 @@ import React from 'react';
 // import Root from "./APIs/DatePickerAndroid/index"
 // import Root from "./APIs/Geolocation/index"
 // import Root from "./APIs/ImageCapInsets/index"
-import Root from "./APIs/Keyboard/index"
+// import Root from "./APIs/Keyboard/index"
+import Root from "./APIs/LayoutAnimation/index"
 
 
 function setup(): ReactClass<{}> {

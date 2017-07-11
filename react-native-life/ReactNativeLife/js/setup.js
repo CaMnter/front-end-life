@@ -83,7 +83,8 @@ import React from 'react';
 // import Root from "./APIs/Keyboard/index"
 // import Root from "./APIs/LayoutAnimation/index"
 // import Root from "./APIs/Linking/index"
-import Root from "./APIs/NetInfo/index"
+// import Root from "./APIs/NetInfo/index"
+import Root from "./APIs/PanResponder/index"
 
 
 function setup(): ReactClass<{}> {

@@ -85,7 +85,8 @@ import React from 'react';
 // import Root from "./APIs/Linking/index"
 // import Root from "./APIs/NetInfo/index"
 // import Root from "./APIs/PanResponder/index"
-import Root from "./APIs/PermissionsAndroid/index"
+// import Root from "./APIs/PermissionsAndroid/index"
+import Root from "./APIs/Share/index"
 
 
 function setup(): ReactClass<{}> {

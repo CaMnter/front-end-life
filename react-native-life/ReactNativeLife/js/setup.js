@@ -86,7 +86,8 @@ import React from 'react';
 // import Root from "./APIs/NetInfo/index"
 // import Root from "./APIs/PanResponder/index"
 // import Root from "./APIs/PermissionsAndroid/index"
-import Root from "./APIs/Share/index"
+// import Root from "./APIs/Share/index"
+import Root from "./APIs/TimePickerAndroid/index"
 
 
 function setup(): ReactClass<{}> {

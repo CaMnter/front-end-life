@@ -1,4 +1,5 @@
 import {createElement, render} from 'rax';
-import App from './App';
+import App from './js/hello';
+import {PropsComponent} from './js/props';
 
-render(<App />);
+render(<PropsComponent sign="Save you from anything" />);

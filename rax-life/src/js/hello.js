@@ -1,7 +1,11 @@
+/**
+ * @author CaMnter
+ */
+
 import {createElement, Component} from 'rax';
 import View from 'rax-view';
 import Text from 'rax-text';
-import styles from './App.css';
+import styles from '../css/hello.css';
 
 class App extends Component {
   render() {

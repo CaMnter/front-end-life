@@ -1,7 +1,7 @@
 /**
  * @author CaMnter
  */
-import {createElement, Component} from 'rax';
+import { createElement, Component } from 'rax';
 import Text from 'rax-text';
 
 class PropsComponent extends Component {

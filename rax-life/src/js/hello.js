@@ -2,7 +2,7 @@
  * @author CaMnter
  */
 
-import {createElement, Component} from 'rax';
+import { createElement, Component } from 'rax';
 import View from 'rax-view';
 import Text from 'rax-text';
 import styles from '../css/hello.css';

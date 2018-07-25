@@ -15,6 +15,7 @@ class ScrollViewComponent extends Component {
   render() {
     return (
       <ScrollView loadMoreOffset={300} onLoadMore={() => {
+        console.log('onLoadMore');
       }}>
         <Text style={{ color: '#ffffff', margin: 5, fontSize: 12, backgroundColor: 'blue' }}>
           Save you from anything

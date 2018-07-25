@@ -8,7 +8,6 @@ import Touchable from 'rax-touchable';
 import Text from 'rax-text';
 
 class TouchComponent extends Component {
-
   constructor(props) {
     super(props);
     this.state = {};
@@ -18,7 +17,7 @@ class TouchComponent extends Component {
     return (
       <ScrollView>
         <Touchable onPress={() => {
-          console.log('Touchable text press')
+          console.log('Touchable text press');
         }}>
           <Text>Touchable text</Text>
         </Touchable>

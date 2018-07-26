@@ -6,5 +6,6 @@ import TouchComponent from './js/touch';
 import AppearComponent from './js/appear';
 import ScrollViewComponent from './js/scroll';
 import TextInputComponent from './js/textInput';
+import FetchPromiseView from './js/fetch';
 
-render(<TextInputComponent />);
+render(<FetchPromiseView />);

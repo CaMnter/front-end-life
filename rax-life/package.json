@@ -13,7 +13,8 @@
     "rax-text": "^0.6.4",
     "rax-textinput": "^0.6.4",
     "rax-touchable": "^0.6.4",
-    "rax-view": "^0.6.4"
+    "rax-view": "^0.6.4",
+    "universal-jsonp": "^0.6.4-1"
   },
   "devDependencies": {
     "rax-scripts": "^0.6.4-1",

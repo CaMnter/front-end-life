@@ -8,5 +8,6 @@ import ScrollViewComponent from './js/scroll';
 import TextInputComponent from './js/textInput';
 import FetchPromiseView from './js/fetch';
 import JsoupComponent from './js/jsoup';
+import EnvComponent from './js/env';
 
-render(<JsoupComponent />);
+render(<EnvComponent />);

@@ -9,5 +9,6 @@ import TextInputComponent from './js/textInput';
 import FetchPromiseView from './js/fetch';
 import JsoupComponent from './js/jsoup';
 import EnvComponent from './js/env';
+import TextComponent from './js/text';
 
-render(<EnvComponent />);
+render(<TextComponent />);

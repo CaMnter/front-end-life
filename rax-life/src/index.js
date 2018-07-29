@@ -10,5 +10,6 @@ import FetchPromiseView from './js/fetch';
 import JsoupComponent from './js/jsoup';
 import EnvComponent from './js/env';
 import TextComponent from './js/text';
+import ViewComponent from './js/view';
 
-render(<TextComponent />);
+render(<ViewComponent />);

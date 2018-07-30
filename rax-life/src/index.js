@@ -11,5 +11,6 @@ import JsoupComponent from './js/jsoup';
 import EnvComponent from './js/env';
 import TextComponent from './js/text';
 import ViewComponent from './js/view';
+import ImageComponent from './js/image';
 
-render(<ViewComponent />);
+render(<ImageComponent />);

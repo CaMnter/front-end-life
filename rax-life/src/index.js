@@ -12,5 +12,6 @@ import EnvComponent from './js/env';
 import TextComponent from './js/text';
 import ViewComponent from './js/view';
 import ImageComponent from './js/image';
+import LinkComponent from './js/link';
 
-render(<ImageComponent />);
+render(<LinkComponent />);

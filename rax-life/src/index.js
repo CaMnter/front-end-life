@@ -13,5 +13,6 @@ import TextComponent from './js/text';
 import ViewComponent from './js/view';
 import ImageComponent from './js/image';
 import LinkComponent from './js/link';
+import IconFontComponent from './js/iconfont';
 
-render(<LinkComponent />);
+render(<IconFontComponent />);

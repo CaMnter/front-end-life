@@ -14,5 +14,6 @@ import ViewComponent from './js/view';
 import ImageComponent from './js/image';
 import LinkComponent from './js/link';
 import IconFontComponent from './js/iconfont';
+import ButtonComponent from './js/button';
 
-render(<IconFontComponent />);
+render(<ButtonComponent />);

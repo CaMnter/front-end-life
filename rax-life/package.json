@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "rax": "^0.6.4",
+    "rax-button": "^0.6.4",
     "rax-icon": "^0.6.4",
     "rax-image": "^0.6.4",
     "rax-link": "^0.6.4",

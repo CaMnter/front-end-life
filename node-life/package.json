@@ -1,0 +1,14 @@
+{
+  "name": "node-life",
+  "version": "1.0.0",
+  "description": "camnter-node-life",
+  "bin": {
+    "camnter-node-life": "bin/life.js"
+  },
+  "dependencies": {
+    "commander": "^2.17.1"
+  },
+  "devDependencies": {
+    "commander": "^2.17.1"
+  }
+}

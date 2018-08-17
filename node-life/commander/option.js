@@ -7,7 +7,7 @@
 var program = require('commander');
 
 program
-  .version('0.1.0')
+  .version('0.0.1')
   .option('-c, --cm', '「CaMnter」')
   // [] 会默认加上在 program 上
   .option('-c, --save [save]', '「Save you from anything」', 'save')

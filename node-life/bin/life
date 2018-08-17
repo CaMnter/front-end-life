@@ -1,11 +1,10 @@
-/**
- * @author CaMnter
- */
+#!/usr/bin/env node
 
-const commander = require('commander')  // npm i commander -D
+const commander = require('commander');
 
 commander.version('1.0.0')
          .usage('<command> 「项目名称」')
          .command('cm', '「CaMnter」')
          .command('save', '「Save you from anything」')
+         .command('init', '「Init test product」')
          .parse(process.argv)

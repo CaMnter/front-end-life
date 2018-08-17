@@ -9,6 +9,9 @@
     "commander": "^2.17.1"
   },
   "devDependencies": {
-    "commander": "^2.17.1"
+    "commander": "^2.17.1",
+    "fs": "0.0.1-security",
+    "glob": "^7.1.2",
+    "path": "^0.12.7"
   }
 }

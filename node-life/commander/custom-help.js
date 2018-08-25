@@ -19,3 +19,5 @@ program.on('--help', function () {
 });
 
 program.parse(process.argv);
+
+// node commander/custom-help.js --help

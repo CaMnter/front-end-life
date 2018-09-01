@@ -6,22 +6,22 @@
 ## node library
 
 <br>
-
+ 
 ### ora
 
  [ora github](https://github.com/sindresorhus/ora)
 
 `npm install ora -save`
 
-?????? loading ??? ?????????
-
+命令行环境的 loading 效果， 显示各种状态的图标
+ 
 <br>
-
+    
 ### path
 
 `npm install path --save`
 
-??????????
+处理文件路径的小工具
 
 <br>
 
@@ -31,7 +31,7 @@
 
 `npm install download-git-repo --save`
 
-?? github ?
+下载 github 库
 
 <br>
 
@@ -41,7 +41,7 @@
 
 `npm install metalsmith --save`
 
-??????
+静态页面生成
 
 <br>
 
@@ -51,7 +51,7 @@
 
 `npm install handlebars --save`
 
-?? + ??????html or js
+模板 + 数据「生成」html or js
 
 <br>
 
@@ -61,4 +61,4 @@
 
 `npm install rimraf --save`
 
-????????? `rm -rf`
+相当于命令行下执行 `rm -rf`

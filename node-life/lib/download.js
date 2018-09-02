@@ -2,7 +2,11 @@
  * @author CaMnter
  */
 
-const ora      = require('ora'); // https://github.com/sindresorhus/ora
+/**
+ * https://github.com/sindresorhus/ora
+ * @type {function(): Ora}
+ */
+const ora      = require('ora');
 const path     = require('path');
 const download = require('download-git-repo');
 

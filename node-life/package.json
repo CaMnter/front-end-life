@@ -6,11 +6,20 @@
     "camnter-node-life": "bin/life.js"
   },
   "dependencies": {
+    "chalk": "^2.4.1",
     "colors": "^1.3.2",
-    "commander": "^2.17.1",
+    "commander": "^2.18.0",
+    "download-git-repo": "^1.1.0",
+    "glob": "^7.1.3",
     "handlebars": "^4.0.11",
+    "inquirer": "^6.2.0",
+    "latest-version": "^4.0.0",
+    "log-symbols": "^2.2.0",
     "metalsmith": "^2.3.0",
+    "ora": "^3.0.0",
     "path": "^0.12.7",
+    "process": "^0.11.10",
+    "react-dev-utils": "^5.0.2",
     "rimraf": "^2.6.2"
   },
   "devDependencies": {

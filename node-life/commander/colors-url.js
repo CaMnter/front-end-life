@@ -10,4 +10,11 @@ function makeGreen(txt) {
   return colors.green(txt);
 }
 
-console.log(makeGreen('「color url」「Save you from color url」'));
+function logGreen(txt) {
+  console.log(makeGreen(txt));
+}
+
+module.exports = {
+  logGreen: logGreen,
+  makeGreen: makeGreen
+}

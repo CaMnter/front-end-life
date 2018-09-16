@@ -4,12 +4,13 @@
  * @author CaMnter
  */
 
-const path = require('path');
-const fs = require('fs');
-const download = require('../lib/download');
-const generator = require('../lib/generator');
-const process = require('process');
-const spawn = require('react-dev-utils/crossSpawn');
+const path                            = require('path');
+const fs                              = require('fs');
+const download                        = require('../lib/download');
+const generator                       = require('../lib/generator');
+const process                         = require('process');
+const spawn                           = require('react-dev-utils/crossSpawn');
+const { logGreen, logYellow, logRed } = require('../lib/colors-log');
 
 /**
  * 命令行交互工具
@@ -42,16 +43,78 @@ const chalk = require('chalk');
 const logSymbols = require('log-symbols');
 
 program.usage('<project-name>')
+       .option('-t, --name [repository-type]', 'repository name', 'hello-world')
        .option('-t, --type [repository-type]', 'repository type「github or gitlab」', 'github')
        .option('-r, --repository [repository]', 'repository path「user/repository」', 'CaMnter/front-end-life')
        .parse(process.argv);
 
 /**
  *「Test」
- * node bin/life init --type gitlab
- * node bin/life init --repository CaMnter/front-end-life
- * node bin/life init --type github --repository CaMnter/front-end-life
+ * node bin/life init --name hello-world --type gitlab
+ * node bin/life init --name hello-world --repository CaMnter/front-end-life
+ * node bin/life init --name hello-world --type github --repository CaMnter/front-end-life
  */
-console.log('「program.type」', program.type);
-console.log('「program.repository」', program.repository);
+
+logYellow('「program.name」' + program.name);
+logYellow('「program.type」' + program.type);
+logYellow('「program.repository」' + program.repository);
+logYellow('「program.args」' + program.args);
+
+const projectName = program.name;
+
+if (!projectName) {
+  program.help();
+  return
+}
+
+/**
+ * 遍历当前目录
+ */
+const currentFiles = glob.sync('*');
+const rootName     = path.basename(process.cwd());
+logYellow('「currentFiles」' + currentFiles);
+logYellow('「rootName」' + rootName);
+logYellow('「pwd」' + process.cwd());
+logYellow('');
+
+let next = undefined;
+logYellow('「currentFiles」' + currentFiles);
+
+/**
+ * 在 build 文件夹中执行「node-life/build」
+ * node ../bin/life init --name build --type github --repository CaMnter/front-end-life node-life build
+ */
+if (currentFiles.length) {
+  if (currentFiles.filter(name => {
+      const fileName = path.resolve(process.cwd(), path.join('.', name))
+      logYellow('「fileName」' + fileName);
+      /**
+       * 是否是文件夹
+       */
+      const isDirectory = fs.statSync(fileName).isDirectory();
+      return name.indexOf(projectName) !== -1 && isDirectory;
+    }).length !== 0) {
+    logRed("项目「" + projectName + "」已经存在");
+    return
+  }
+  next = Promise.resolve(projectName);
+} else if (rootName === projectName) {
+  /**
+   * 目标目录 与 根目录 名字相同
+   */
+  logRed("「" + projectName + "」空项目文件夹");
+  next = inquirer.prompt([
+    {
+      name: 'buildInCurrent',
+      message: '直接在当前目录下创建？',
+      type: 'confirm',
+      default: true
+    }
+  ]).then(answer => {
+    return Promise.resolve(answer.buildInCurrent ? projectName : '.')
+  })
+} else {
+  next = Promise.resolve(projectName);
+}
+
 

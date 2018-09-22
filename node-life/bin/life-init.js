@@ -117,4 +117,71 @@ if (currentFiles.length) {
   next = Promise.resolve(projectName);
 }
 
+/**
+ * next = Promise.resolve(projectName)
+ */
+function run() {
+  next
+    .then(projectName => {
+
+      /**
+       * 异步创建文件夹
+       */
+      if (projectName !== '.') {
+        fs.mkdirSync(projectName);
+      }
+
+      /**
+       * 下载 github 项目
+       */
+      return download(projectName, program.type, program.repository)
+        .then(target => {
+          return {
+            name: projectName,
+            root: projectName,
+            target: target
+          }
+        });
+    })
+    .then(flowData => {
+      /**
+       * 终端交互
+       */
+      return inquirer
+        .prompt([
+          {
+            name: 'projectName',
+            message: '项目的名称',
+            default: flowData.name
+          }, {
+            name: 'projectVersion',
+            message: '项目的版本号',
+            default: '1.0.0'
+          }, {
+            name: 'projectDescription',
+            message: '项目的简介',
+            default: `A project named ${flowData.name}`
+          }
+        ])
+        .then(answers => {
+          return {
+            ...flowData,
+            metadata: {
+              ...answers
+            }
+          }
+        });
+    })
+    .then(inquirerPrompt =>{
+      /**
+       * 生成
+       */
+      return generator(
+        inquirerPrompt.metadata,
+        inquirerPrompt.target,
+        path.parse(inquirerPrompt.target).dir
+      );
+    });
+}
+
 

@@ -36,3 +36,5 @@ const downloadFromUrl = (target, type = 'github', url) => {
     })
   });
 };
+
+module.exports = downloadFromUrl;

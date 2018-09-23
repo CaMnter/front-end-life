@@ -5,11 +5,19 @@
 const Metalsmith = require('metalsmith');
 const Handlebars = require('handlebars');
 const Remove     = require('rimraf').sync;
+const fs         = require('fs');
+const path       = require('path');
 
 module.exports = function (metadata = {}, source, dest = '') {
   if (!source) {
     return Promise.reject(new Error('「Error」「source」${source}'));
   }
+
+  /**
+   * 解析 package.json
+   */
+  const { templateVersion } = JSON.parse(fs.readFileSync(path.resolve(`${source}/package.json`)).toString());
+
 
   return new Promise((resolve, reject) => {
     Metalsmith(process.cwd())
@@ -33,7 +41,10 @@ module.exports = function (metadata = {}, source, dest = '') {
       })
       .build(error => {
         Remove(source);
-        error ? reject(error) : resolve();
+        error ? reject(error) : resolve({
+          dest,
+          templateVersion
+        });
       });
   });
 };

@@ -172,7 +172,7 @@ function run() {
           }
         });
     })
-    .then(inquirerPrompt =>{
+    .then(inquirerPrompt => {
       /**
        * 生成
        */
@@ -181,7 +181,28 @@ function run() {
         inquirerPrompt.target,
         path.parse(inquirerPrompt.target).dir
       );
+    })
+    .then(generatorData => {
+      const projectPath = path.resolve(generatorData.dest);
+      const json        = {
+        repository: {
+          address: program.repository,
+          type: program.type
+        },
+        replace_dir: [],
+        package: {
+          dependencies: "update",
+          scripts: "add",
+          repository: "replace"
+        }
+      };
+      fs.writeFileSync(`${projectPath}/camnter.json`, JSON.stringify(json, null, 4/* 4 空格缩进 */));
+      const packageJson           = JSON.parse(fs.readFileSync(`${projectPath}/package.json`).toString());
+      packageJson.templateVersion = generatorData.templateVersion || '0.0.1';
+      fs.writeFileSync(`${projectPath}/package.json`, JSON.stringify(packageJson, null, 4/* 4 空格缩进 */));
+      logGreen('「创建成功」');
     });
+
 }
 
 

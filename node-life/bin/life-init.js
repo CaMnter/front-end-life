@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 /**
+ * node v10.11.0
+ *
  * @author CaMnter
  */
 
@@ -64,7 +66,7 @@ const projectName = program.name;
 
 if (!projectName) {
   program.help();
-  return
+  return;
 }
 
 /**
@@ -95,7 +97,7 @@ if (currentFiles.length) {
       return name.indexOf(projectName) !== -1 && isDirectory;
     }).length !== 0) {
     logRed("项目「" + projectName + "」已经存在");
-    return
+    return;
   }
   next = Promise.resolve(projectName);
 } else if (rootName === projectName) {
@@ -116,6 +118,8 @@ if (currentFiles.length) {
 } else {
   next = Promise.resolve(projectName);
 }
+
+
 
 /**
  * next = Promise.resolve(projectName)
@@ -144,6 +148,7 @@ function run() {
         });
     })
     .then(flowData => {
+      console.log(flowData);
       /**
        * 终端交互
        */
@@ -201,8 +206,24 @@ function run() {
       packageJson.templateVersion = generatorData.templateVersion || '0.0.1';
       fs.writeFileSync(`${projectPath}/package.json`, JSON.stringify(packageJson, null, 4/* 4 空格缩进 */));
       logGreen('「创建成功」');
+      try {
+        process.chdir(projectName);
+        const npmCommand = spawn.sync(
+          'npm',
+          ['install'],
+          { stdio: 'inherit' }
+        );
+        if (npmCommand.status === 0) {
+          logGreen(`成功创建 「${projectName}」「${process.cwd()}」`);
+          logGreen(`npm start`);
+          logGreen(`npm run build`);
+        }
+      } catch (error) {
+        logRed(`创建失败：${error.message}`);
+      }
     });
 
 }
 
+next && run();
 

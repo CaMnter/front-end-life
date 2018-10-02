@@ -138,7 +138,7 @@ function run() {
       /**
        * 下载 github 项目
        */
-      return download(projectName, program.type, program.repository)
+      return download(projectName, program.type, `direct:https://github.com/${program.repository}.git`)
         .then(target => {
           return {
             name: projectName,

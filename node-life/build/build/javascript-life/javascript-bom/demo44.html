@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo44</title>
+</head>
+<body>
+
+<p>
+<h1>JavaScript 计时</h1>
+</p>
+
+<script>
+    const SAVE = "Save you from anything";
+    function countdown1() {
+        setTimeout("alert('3 秒倒计时: '+SAVE)", 3000)
+    }
+
+    var stopButton = document.getElementById("stopButton");
+    var startButton = document.getElementById("startButton");
+
+    var count = 0;
+    var timeoutMethod;
+    var methodCount = 0;
+    var started = false;
+
+    function start() {
+        var countdownSpan = document.getElementById("countdownSpan");
+        started = true;
+        countdownSpan.innerHTML = ++count;
+        timeoutMethod=setTimeout("start()", 1000);
+    }
+    function stop() {
+        if (!started)return;
+        clearTimeout(timeoutMethod);
+        reset();
+    }
+    function reset() {
+        var countdownSpan = document.getElementById("countdownSpan");
+        count = 0;
+        timeoutMethod = null;
+        methodCount = 0;
+        started = false;
+        countdownSpan.innerHTML = "0";
+    }
+
+</script>
+<button type="button" onclick="countdown1()">3 秒倒计时</button>
+<br>
+<div>
+    <button id="startButton" onclick="start()">开始计时</button>
+    <span id="countdownSpan" style="margin-left: 16px;margin-right: 16px;font-size: 13px">0</span>
+    <button id="stopButton" onclick="stop()">停止计时</button>
+</div>
+</body>
+</html>

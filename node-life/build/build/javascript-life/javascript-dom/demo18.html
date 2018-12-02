@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo18</title>
+    <!--
+        通过 id 找到 HTML 元素
+        通过标签名找到 HTML 元素
+        通过类名找到 HTML 元素 ( 通过类名查找 HTML 元素在 IE 5,6,7,8 中无效 )
+    -->
+</head>
+<body>
+
+<p>
+<h1>JavaScript 查找 HTML 元素</h1>
+</p>
+
+<div id="save">
+    <div>Save you from anything</div>
+    <div>CaMnter</div>
+</div>
+
+<script>
+    var saveDiv = document.getElementById("save");
+    var camnterDiv = saveDiv.getElementsByTagName("div")[1];
+    camnterDiv.innerHTML = "getElementsByTagName: " + camnterDiv.innerHTML;
+</script>
+
+</body>
+</html>

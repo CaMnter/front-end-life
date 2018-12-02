@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo28</title>
+    <!--
+        替代语法（使用对象 literals）：
+            person={xxx:"xxx"};
+        使用函数来构造对象：
+            function xxx(xxx,yyy){
+                this.xxx = xxx;
+                this.yyy = yyy;
+            }
+        把方法添加到 JavaScript 对象:
+            function xxx(xxx,yyy){
+                this.xxx = xxx;
+                this.yyy = yyy;
+                this.ccc = ccc;
+                function ccc(ccc){
+                    ...
+                }
+            }
+            xxx = xxx(xxx,yyy);
+            xxx.ccc()             // 调用方法
+     -->
+</head>
+<body>
+
+<p>
+<h1>JavaScript 对象</h1>
+</p>
+
+<script>
+    function camnter(name, sign) {
+        const TAG = "[camnter]";
+        const TO_STRING = "[toString]";
+        const SEPARATOR = " >>>>>> ";
+
+        this.name = name;
+        this.sign = sign;
+
+        function printInfo() {
+            return TAG +
+                    SEPARATOR +
+                    TO_STRING +
+                    SEPARATOR +
+                    name +
+                    SEPARATOR +
+                    sign;
+        }
+
+        this.printInfo = printInfo;
+    }
+    camnter = new camnter("CaMnter", "Save you from anything");
+    save = {
+        title: "save",
+        content: "Save you from anything"
+    };
+    save.handler = "CaMnter";
+    document.write(camnter.name + "<br>");
+    document.write(camnter.sign + "<br>");
+    document.write(save.content + "<br>");
+    document.write(save.handler + "<br>");
+    document.write(camnter.printInfo() + "<br>");
+</script>
+
+</body>
+</html>

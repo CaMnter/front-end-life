@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo11</title>
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 闭包 (closure)</h1>
+</p>
+
+<script>
+    var save = "Save you from anything";
+    function simpleClosure() {
+        document.write("[simpleClosure]\t[save]\t" + save + "<br>");
+    }
+    simpleClosure();
+    var six = 6;
+    function add(n1, n2) {
+        function addClosure() {
+            return six + n1 + n2;
+        }
+        return addClosure();
+    }
+    document.write("[add(8, 12)]\t" + add(8, 12) + "<br>");
+</script>
+
+</body>
+</html>

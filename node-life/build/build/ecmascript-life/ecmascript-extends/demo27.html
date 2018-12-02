@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo27</title>
+
+    <!--
+        对象冒充的多继承
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 对象冒充的多继承</h1>
+</p>
+
+<script>
+    function SuperClassA(name, sign) {
+        this.name = name;
+        this.sign = sign;
+        this.toString = function () {
+            return "SuperClassA";
+        }
+    }
+    function SuperClassB(other) {
+        this.other = other;
+    }
+    function ChildClass(name, sign, other) {
+        this.superConstructor = SuperClassA;
+        this.superConstructor(name, sign);
+        this.superConstructor = SuperClassB;
+        this.superConstructor(other);
+        delete this.superConstructor;
+        this.toString = function () {
+            return "ChildClass";
+        }
+    }
+    const NAME = "CaMnter";
+    const SIGN = "Save you from anything";
+    var childClass = new ChildClass(NAME, SIGN, 0x26);
+    document.write("[" + childClass.toString() + "]\t[name]\t" + childClass.name + "\t[sign]\t" +
+            childClass.sign + "\t[other]\t" + childClass.other + "<br>");
+</script>
+
+</body>
+</html>

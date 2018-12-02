@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo03</title>
+    <!--
+         document.getElementByID("some id")。这个方法是 HTML DOM 中定义的。
+         DOM（文档对象模型）是用以访问 HTML 元素的正式 W3C 标准。
+    -->
+</head>
+<body>
+
+<p>
+<h1>JavaScript 改变 HTML 元素的内容</h1>
+</p>
+
+<p id="save"> Save </p>
+
+<script>
+    function findElementById() {
+        var x = document.getElementById("save");    // 元素
+        x.innerHTML = "Save you from anything"      // 修改内容
+    }
+</script>
+
+<button type="button" onclick="findElementById()">修改</button>
+
+</body>
+</html>

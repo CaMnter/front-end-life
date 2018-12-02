@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo12</title>
+    <!--
+        对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义。
+        对象属性有两种寻址方式：
+            .
+            [""]
+    -->
+</head>
+<body>
+
+<p>
+<h1>JavaScript 对象</h1>
+</p>
+
+<script>
+    var camnter = {
+        fullName: "CaMnter",
+        sign: "Save you from anything"
+    };
+    document.write("camnter.fullName = " + camnter.fullName + "<br>");
+    document.write("camnter[\"sign\"] = " + camnter["sign"] + "<br>");
+
+    var dream = {};     // new Object
+    dream.tag = "错的是我,还是这世界本身就是错的!";
+    document.write("dream.tag = " + dream.tag + "<br>");
+
+    var save = "Save you from anything";
+    document.write("save = " + save + "<br>");
+    document.write("save.length = " + save.length + "<br>");
+    document.write("save.indexOf(\"you\") = " + save.indexOf("you") + "<br>");
+    document.write("save.search(\"you\") = " + save.search("you") + "<br>");
+    document.write("save.toUpperCase() = " + save.toUpperCase() + "<br>");
+</script>
+
+</body>
+</html>

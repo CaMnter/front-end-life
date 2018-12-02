@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo25</title>
+
+    <!--
+        极晚绑定: 即能够在对象实例化后再定义它的方法
+
+        注意：不建议使用极晚绑定方法，因为很难对其跟踪和记录。不过，还是应该了解这种可能
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 极晚绑定</h1>
+</p>
+
+<script>
+    var save = "Save you from anything"
+    String.prototype.toString = function () {
+        document.write("[String]\t"+this.valueOf()+"<br>");
+    };
+    save.toString();
+</script>
+
+</body>
+</html>

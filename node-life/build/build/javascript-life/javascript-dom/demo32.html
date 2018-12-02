@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo32</title>
+</head>
+<body>
+
+<p>
+<h1>JavaScript Date（日期）</h1>
+</p>
+
+<script>
+    const WEEK_DAY = new Array(7);
+    WEEK_DAY[0] = "星期日";
+    WEEK_DAY[1] = "星期一";
+    WEEK_DAY[2] = "星期二";
+    WEEK_DAY[3] = "星期三";
+    WEEK_DAY[4] = "星期四";
+    WEEK_DAY[5] = "星期五";
+    WEEK_DAY[6] = "星期六";
+
+    var date = new Date();
+    date.setFullYear(2016, 6, 6);
+    document.write("<div> date.toString = " + date.toString() + "</div>");
+    document.write("<div> date.toUTCString = " + date.toUTCString() + "</div>");
+    document.write("<div> 今天 = " + WEEK_DAY[date.getDay()] + "</div>");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo04</title>
+</head>
+<body>
+
+<p>
+<h1>JavaScript 改变 HTML 图像</h1>
+</p>
+
+<script>
+    function changeImage() {
+        var bulbElement = document.getElementById("bulb");
+        bulbElement.src = bulbElement.src.match("off") ? "res/demo04_bulb_on.gif" : "res/demo04_bulb_off.gif";
+    }
+</script>
+
+<img id="bulb" onclick="changeImage()" src="res/demo04_bulb_off.gif">
+
+</body>
+</html>

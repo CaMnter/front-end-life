@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo25</title>
+    <!--
+        onmousedown, onmouseup 以及 onclick 构成了鼠标点击事件的所有部分
+        首先当点击鼠标按钮时，会触发 onmousedown 事件
+        当释放鼠标按钮时，会触发 onmouseup 事件，最后，当完成鼠标点击时，会触发 onclick 事件
+     -->
+</head>
+<body>
+
+<p>
+<h1>JavaScript onmousedown、onmouseup 以及 onclick 事件</h1>
+</p>
+
+<div onmousedown="function onDivDown(view) {
+        with (view){
+            style.backgroundColor = '#1EC5E5';
+            innerHTML = 'Save you from anything';
+        }
+     }
+     onDivDown(this)"
+     onmouseup="function onDivUp(view) {
+        with (view){
+            style.backgroundColor='green';
+            innerHTML = 'Waiting for you';
+        }
+     }
+     onDivUp(this)"
+     onmouseout="function onDivOut(field) {
+        with (field){
+            style.backgroundColor='green';
+            innerHTML = 'Waiting for you';
+        }
+     }
+     onDivOut(this)"
+     style="background-color: green;width: 200px;height: 60px;padding: 66px;color: #ffffff;text-align: center;line-height:60px">
+    Waiting
+    for you
+</div>
+
+
+</body>
+</html>

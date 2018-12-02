@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo15</title>
+    <!--
+        可以对 JavaScript 语句进行标记
+        如需标记 JavaScript 语句，请在语句之前加上冒号：
+            label: 语句
+        break 和 continue 语句仅仅是能够跳出代码块的语句
+        continue 语句（带有或不带标签引用）只能用在循环中
+        break 语句（不带标签引用），只能用在循环或 switch 中
+        通过标签引用，break 语句可用于跳出任何 JavaScript 代码块
+    -->
+</head>
+<body>
+
+<p>
+<h1>JavaScript 标签</h1>
+</p>
+
+<script>
+    save = ["Save", "you", "from", "anything"];
+    camnter:{
+        document.write(save[0] + "<br>");
+        document.write(save[1] + "<br>");
+        break camnter;
+        document.write(save[2] + "<br>");
+        document.write(save[3] + "<br>");
+    }
+</script>
+
+</body>
+</html>

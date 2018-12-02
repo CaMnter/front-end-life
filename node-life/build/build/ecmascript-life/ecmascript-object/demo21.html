@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo21</title>
+
+    <!--
+        可以给 Array 类添加两个方法 enqueue() 和 dequeue()
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 重命名已有方法</h1>
+</p>
+
+<script>
+    Array.prototype.enqueue = function (items) {
+        this.push(items);
+    };
+    Array.prototype.dequeue = function () {
+        return this.shift();
+    };
+    var array = [];
+    array.enqueue("Save");
+    array.enqueue("you");
+    array.enqueue("from");
+    array.enqueue("anything");
+    document.write("[array]\t" + array + "<br>");
+    document.write("[array.dequeue]\t" + array.dequeue() + "<br>");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo05</title>
+</head>
+<body>
+
+<p>
+<h1>JavaScript 改变 HTML 样式</h1>
+</p>
+
+<p id="target">
+    Save
+</p>
+
+<script>
+    function mod() {
+        var pElement = document.getElementById("target");
+        pElement.style.color = "#ff0000"
+    }
+</script>
+
+<button type="button" onclick="mod()">修改</button>
+
+</body>
+</html>

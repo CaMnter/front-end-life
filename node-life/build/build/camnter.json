@@ -1,0 +1,12 @@
+{
+    "repository": {
+        "address": "CaMnter/front-end-life",
+        "type": "github"
+    },
+    "replace_dir": [],
+    "package": {
+        "dependencies": "update",
+        "scripts": "add",
+        "repository": "replace"
+    }
+}

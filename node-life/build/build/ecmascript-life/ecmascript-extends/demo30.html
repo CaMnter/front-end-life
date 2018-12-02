@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo30</title>
+
+    <!--
+        原型链
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 原型链</h1>
+</p>
+
+<script>
+    function SuperClassA() {
+    }
+    SuperClassA.prototype.name = "CaMnter";
+    SuperClassA.prototype.sign = "Save you from anything";
+    SuperClassA.prototype.toString = function () {
+        return "SuperClassA";
+    };
+    function ChildClass() {
+    }
+    ChildClass.prototype = new SuperClassA();
+    ChildClass.prototype.name = "C-" + ChildClass.prototype.name;
+    ChildClass.prototype.sign = "C-" + ChildClass.prototype.sign;
+    ChildClass.prototype.toString = function () {
+        return "ChildClass";
+    };
+    var childClass = new ChildClass();
+    document.write("[" + childClass.toString() + "]\t[name]\t" + childClass.name + "\t[sign]\t" +
+            childClass.sign + "<br>");
+</script>
+
+</body>
+</html>

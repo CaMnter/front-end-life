@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo01</title>
+
+    <!--
+        对变量或值调用 typeof 运算符将返回下列值之一：
+            undefined - 如果变量是 Undefined 类型的
+            boolean - 如果变量是 Boolean 类型的
+            number - 如果变量是 Number 类型的
+            string - 如果变量是 String 类型的
+            object - 如果变量是一种引用类型或 Null 类型的
+        注意: 为什么 typeof 运算符对于 null 值会返回 "Object"。
+                这实际上是 JavaScript 最初实现中的一个错误，然后被 ECMAScript 沿用了。现在，null 被认为
+                是对象的占位符，从而解释了这一矛盾，但从技术上来说，它仍然是原始值
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript typeof</h1>
+</p>
+
+<script>
+    const SAVE = "Save you from anything";
+    var undefinedVar;
+    function CaMnter(name, sign) {
+        const TAG = "[camnter]";
+        const TO_STRING = "[toString]";
+        const SEPARATOR = " >>>>>> ";
+
+        this.name = name;
+        this.sign = sign;
+
+        function printInfo() {
+            return TAG +
+                    SEPARATOR +
+                    TO_STRING +
+                    SEPARATOR +
+                    name +
+                    SEPARATOR +
+                    sign;
+        }
+
+        this.printInfo = printInfo;
+    }
+    var camnter = new CaMnter("CaMnter", "Save you from anything");
+    document.write("SAVE = " + SAVE + "<br>");
+    document.write("typeof undefinedVar = " + (typeof undefinedVar) + "<br>");
+    document.write("typeof true = " + (typeof true) + "<br>");
+    document.write("typeof SAVE = " + (typeof SAVE) + "<br>");
+    document.write("typeof 67 = " + (typeof 67) + "<br>");
+    document.write("typeof camnter = " + (typeof camnter) + "<br>");
+    document.write("typeof null = " + (typeof null) + "<br>");
+</script>
+
+</body>
+</html>å

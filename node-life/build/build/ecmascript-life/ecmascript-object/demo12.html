@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo12</title>
+
+    <!--
+        对象废除
+            ECMAScript 拥有无用存储单元收集程序（garbage collection routine），意味着不必专门销毁对象来
+            释放内存。当再没有对对象的引用时，称该对象被废除（dereference）了。运行无用存储单元收集程序时，
+            所有废除的对象都被销毁。每当函数执行完它的代码，无用存储单元收集程序都会运行，释放所有的局部变
+            量，还有在一些其他不可预知的情况下，无用存储单元收集程序也会运行
+
+            把对象的所有引用都设置为 null，可以强制性地废除对象
+
+        ECMAScript 只有公用作用域
+
+        ECMAScript 没有静态作用域
+            严格来说，ECMAScript 并没有静态作用域。不过，它可以给构造函数提供属性和方法。还记得吗，构造函
+            数只是函数。函数是对象，对象可以有属性和方法
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 静态作用域</h1>
+</p>
+
+<script>
+    function save() {
+        document.write("Save<br>");
+    }
+    save.all = function () {
+        document.write("Save you from anything<br>");
+    }
+    save();
+    save.all();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo16</title>
+</head>
+<body>
+
+<p>
+<h1>JavaScript 异常</h1>
+</p>
+
+<script>
+    try {
+        girlFriend404()
+    } catch (e) {
+        document.write("girlFriend404 error" + "<br>")
+    }
+    try {
+        throw "girlFriend500 error"
+    } catch (e) {
+        document.write(e)
+    }
+</script>
+
+</body>
+</html>

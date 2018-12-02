@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo08</title>
+
+    <!--
+        为确定两个运算数是否相等，这两个运算符都会进行类型转换。
+            执行类型转换的规则如下：
+                如果一个运算数是 Boolean 值，在检查相等性之前，把它转换成数字值。false 转换成 0，true 为 1
+                如果一个运算数是字符串，另一个是数字，在检查相等性之前，要尝试把字符串转换成数字
+                如果一个运算数是对象，另一个是字符串，在检查相等性之前，要尝试把对象转换成字符串
+                如果一个运算数是对象，另一个是数字，在检查相等性之前，要尝试把对象转换成数字
+            在比较时，该运算符还遵守下列规则：
+                值 null 和 undefined 相等
+                在检查相等性时，不能把 null 和 undefined 转换成其他值
+                如果某个运算数是 NaN，等号将返回 false，非等号将返回 true
+                如果两个运算数都是对象，那么比较的是它们的引用值。如果两个运算数指向同一对象，那么等号返回 true，否则两个运算数不等
+         全等号和非全等号
+             全等号由三个等号表示（===），只有在无需类型转换运算数就相等的情况下，才返回 true
+             非全等号由感叹号加两个等号（!==）表示，只有在无需类型转换运算数不相等的情况下，才返回 true
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 等性运算符</h1>
+</p>
+
+<script>
+    document.write("Boolean(true) == 1 : " + (Boolean(true) == 1) + "<br>");
+    document.write("\"1\" == 1 : " + ("1" == 1) + "<br>");
+    document.write("\"S\" == 1 : " + ("S" == 1) + "<br>");
+    document.write("{} == \"1\" : " + ({} == "1") + "<br>");
+    document.write("{} == 1 : " + ({} == 1) + "<br>");
+    document.write("null == undefined : " + (null == undefined) + "<br>");
+    document.write("NaN == undefined : " + (true == NaN) + "<br><br><br>");
+
+    document.write("特殊情况: <br>");
+    document.write("null == undefined : " + (null == undefined) + "<br>");
+    document.write("\"NaN\" == NaN : " + ("NaN" == NaN) + "<br>");
+    document.write("5 == NaN : " + (5 == NaN) + "<br>");
+    document.write("NaN == NaN : " + (NaN == NaN) + "<br>");
+    document.write("NaN != NaN : " + (NaN != NaN) + "<br>");
+    document.write("false == 0 : " + (false == 0) + "<br>");
+    document.write("true == 1 : " + (true == 1) + "<br>");
+    document.write("true == 2 : " + (true == 2) + "<br>");
+    document.write("undefined == 0 : " + (undefined == 0) + "<br>");
+    document.write("null == 0 : " + (null == 0) + "<br>");
+    document.write("\"5\" == 0 : " + ("5" == 5) + "<br><br><br>");
+
+    document.write("0 === \"0\" : " + (0 === "0") + "<br>");
+    document.write("0 !== \"0\" : " + (0 !== "0") + "<br>");
+</script>
+
+</body>
+</html>

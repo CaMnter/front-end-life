@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo08</title>
+    <!--
+        在计算机程序中，经常会声明无值的变量。未使用值来声明的变量，其值实际上是 undefined
+
+        重新声明 JavaScript 变量，该变量的值不会丢失
+            var sign = "Save"
+            var sign ( 还在 "Save" )
+    -->
+</head>
+
+<p>
+<h1>JavaScript 变量声明</h1>
+</p>
+
+<p><span>未声明的值 = </span><span id="undefined"></span></p>
+<p><span>重复声明的值 = </span><span id="reSign"></span></p>
+
+<script>
+    function operating() {
+        var undefined;
+        var sign = "Save";
+        var sign;
+        document.getElementById("undefined").innerHTML = undefined;
+        document.getElementById("reSign").innerHTML = sign;
+    }
+</script>
+
+<button type="button" onclick="operating()">operating</button>
+
+<body>
+
+</body>
+</html>

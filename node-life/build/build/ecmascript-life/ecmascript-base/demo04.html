@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo04</title>
+
+    <!--
+        Object 对象具有下列属性：
+            constructor
+                对创建对象的函数的引用（指针）。对于 Object 对象，该指针指向原始的 Object() 函数
+            Prototype
+                对该对象的对象原型的引用。对于所有的对象，它默认返回 Object 对象的一个实例
+            hasOwnProperty(property)
+                判断对象是否有某个特定的属性。必须用字符串指定该属性。（例如，o.hasOwnProperty("name")）
+            IsPrototypeOf(object)
+                判断该对象是否为另一个对象的原型
+            PropertyIsEnumerable
+                判断给定的属性是否可以用 for...in 语句进行枚举
+            ToString()
+                返回对象的原始字符串表示。对于 Object 对象，ECMA-262 没有定义这个值，所以不同的 ECMAScript
+                实现具有不同的值
+            ValueOf()
+                返回最适合该对象的原始值。对于许多对象，该方法返回的值都与 ToString() 的返回值相同
+
+
+        Boolean 表达式中使用 Boolean 对象时,容易出问题
+            在 Boolean 运算中，false 和 true 进行 AND 操作的结果是 false
+
+        Number 对象
+             toFixed() 方法返回的是具有指定位数小数的数字的字符串表示
+             toFixed() 方法能表示具有 0 到 20 位小数的数字，超过这个范围的值会引发错误
+
+             toPrecision()
+             toPrecision() 方法根据最有意义的形式来返回数字的预定形式或指数形式
+             toPrecision() 方法会对数进行舍入
+
+         String 对象
+             charAt() 和 charCodeAt() 方法
+             如果想得到的不是字符，而是字符代码，那么可以调用 charCodeAt() 方法
+
+             concat() 方法
+             用于把一个或多个字符串连接到 String 对象的原始值上
+
+             indexOf() 和 lastIndexOf() 方法
+             这两个方法的不同之处在于，indexOf() 方法是从字符串的开头（位置 0）开始检索字符串，而
+             lastIndexOf() 方法则是从字符串的结尾开始检索子串
+
+             localeCompare() 方法
+                如果 String 对象按照字母顺序排在参数中的字符串之前，返回负数
+                如果 String 对象等于参数中的字符串，返回 0
+                如果 String 对象按照字母顺序排在参数中的字符串之后，返回正数
+
+             slice() 和 substring()
+                区别在于 slice() 方法支持 负数,会从右边开始算
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 引用类型</h1>
+</p>
+
+<script>
+    const SAVE_YOU = "Save you from anything ";
+    const SAVE = "Save";
+    document.write("Boolean(false) && true = " + (Boolean(false) && true) + "<br>");
+    document.write("Number(26).toFixed(6) = " + Number(26).toFixed(6) + "<br>");
+    document.write("Number(26).toExponential(3) = " + Number(26).toExponential(6) + "<br>");
+    document.write("Number(26).toPrecision(3) = " + Number(26).toPrecision(6) + "<br><br><br>");
+    document.write("SAVE = " + SAVE + "<br>");
+    document.write("SAVE_YOU = " + SAVE_YOU + "<br>");
+    document.write("SAVE_YOU.charAt(1) = " + SAVE_YOU.charAt(1) + "<br>");
+    document.write("SAVE_YOU.charCodeAt(1) = " + SAVE_YOU.charCodeAt(1) + "<br>");
+    document.write("SAVE_YOU.concat(SAVE) = " + SAVE_YOU.concat(SAVE) + "<br>");
+    document.write("SAVE_YOU.concat(SAVE).indexOf(SAVE) = " + SAVE_YOU.concat(SAVE).indexOf(SAVE) + "<br>");
+    document.write("SAVE_YOU.concat(SAVE).lastIndexOf(SAVE) = " + SAVE_YOU.concat(SAVE).lastIndexOf(SAVE) + "<br>");
+    document.write("SAVE.localeCompare(Save) = " + SAVE.localeCompare(SAVE) + "<br>");
+    document.write("SAVE.localeCompare(\"Y\") = " + SAVE.localeCompare("Y") + "<br>");
+    document.write("SAVE.localeCompare(\"A\") = " + SAVE.localeCompare("A") + "<br>");
+    document.write("SAVE_YOU.slice(-9) = " + SAVE_YOU.slice(-9) + "<br>");
+    document.write("SAVE_YOU.substring(-9) = " + SAVE_YOU.substring(-9) + "<br>");
+    document.write("SAVE_YOU.slice(-9) = " + SAVE_YOU.slice(5,-10) + "<br>");
+    document.write("SAVE_YOU.slice(-9) = " + SAVE_YOU.substring(14,-10) + "<br>");
+</script>
+
+</body>
+</html>

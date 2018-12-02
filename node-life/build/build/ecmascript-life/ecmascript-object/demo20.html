@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo20</title>
+
+    <!--
+        通过已有的方法创建新方法
+            可以用 prototype 属性为任何已有的类定义新方法，就像处理自己的类一样
+     -->
+</head>
+<body>
+
+<p>
+<h1>ECMAScript 创建新方法</h1>
+</p>
+
+<script>
+    Number.prototype.toHexString = function () {
+        return this.toString(16);
+    };
+    var number = Number(16);
+    document.write("十进制的 16 = 十六进制的 " + number.toHexString() + "<br>");
+</script>
+
+</body>
+</html>

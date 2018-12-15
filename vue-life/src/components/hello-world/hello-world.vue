@@ -5,7 +5,6 @@
 <template>
     <div id='root'>
         {{ message }}
-        <text>2333</text>
     </div>
 </template>
 

@@ -6,13 +6,10 @@ vue<style>
   <div id="app">
     <dl>
       <dt>
-        <img alt="Vue logo" src="./assets/logo.png" />
+        <hello-world :message="helloWorld.message" />
       </dt>
       <dt>
-        <hello-world message="Save you from anything" />
-      </dt>
-      <dt>
-        <title-date title="camnter-title" content="camnter-content" />
+        <title-date :tip="titleDate.tip" :content="titleDate.content" />
       </dt>
     </dl>
   </div>
@@ -28,5 +25,16 @@ vue<style>
       HelloWorld,
       TitleDate
     },
+    data() {
+      return {
+        helloWorld: {
+          message: 'Save you from anything'
+        },
+        titleDate: {
+          tip: '一个提示',
+          content: '一个内容',
+        }
+      }
+    }
   }
 </script>

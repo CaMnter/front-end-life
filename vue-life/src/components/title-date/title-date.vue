@@ -4,7 +4,7 @@
 
 <template>
     <div id='root'>
-        <span id='text' v-bind:title="title">
+        <span id='text' v-bind:title="tip">
             {{content}}
         </span>
     </div>
@@ -14,7 +14,7 @@
     export default {
         name: 'title-date',
         props: {
-            title: String,
+            tip: String,
             content: String,
         }
     }

@@ -11,6 +11,9 @@ vue<style>
       <dt>
         <title-date :tip="titleDate.tip" :content="titleDate.content" />
       </dt>
+      <dt>
+        <normal-button :content="normalButton.content" :click="onNormalButtonClick" />
+      </dt>
     </dl>
   </div>
 </template>
@@ -18,12 +21,14 @@ vue<style>
 <script>
   import HelloWorld from './components/hello-world/hello-world.vue'
   import TitleDate from './components/title-date/title-date.vue'
+  import NormalButton from './components/normal-button/normal-button.vue'
 
   export default {
     name: 'app',
     components: {
       HelloWorld,
-      TitleDate
+      TitleDate,
+      NormalButton
     },
     data() {
       return {
@@ -33,7 +38,15 @@ vue<style>
         titleDate: {
           tip: '一个提示',
           content: '一个内容',
+        },
+        normalButton: {
+          content: '一个按钮'
         }
+      }
+    },
+    methods: {
+      onNormalButtonClick() {
+        this.normalButton.content = this.normalButton.content.split('').reverse().join('')
       }
     }
   }

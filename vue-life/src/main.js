@@ -10,6 +10,7 @@ Vue.config.productionTip = false;
 new Vue({
   el: '#app',
   created: function () {},
+  beforeCreate: () => {},
   render: h => {
     return h(App)
   },

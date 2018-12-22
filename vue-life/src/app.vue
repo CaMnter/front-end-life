@@ -15,8 +15,8 @@
         <normal-button :content="normalButton.content" :click="onNormalButtonClick" />
       </dt>
       <dt>
-        <!-- // TODO test -->
-        <todo-item v-for="item in todoItems" :todo="item" :key="item.id" />
+        <normal-button :content="normalButton.freezeObject.content" :click="onUpdateFreeze" />
+        <normal-button :content="normalButton.normalObject.content" :click="onUpdateNormal" />
       </dt>
     </dl>
 
@@ -27,12 +27,42 @@
   import HelloWorld from './components/hello-world/hello-world.vue';
   import TitleDate from './components/title-date/title-date.vue';
   import NormalButton from './components/normal-button/normal-button.vue';
-  import Vue from 'vue';
 
-  const todoItem = Vue.component('todo-item', {
-    props: ['todo'],
-    template: '<li>{{ todo.text }}</li>'
-  });
+  const freezeObject = {
+    content: 'updateFreeze'
+  }
+
+  Object.freeze(freezeObject);
+
+  const data = {
+    helloWorld: {
+      message: 'Save you from anything'
+    },
+    titleDate: {
+      tip: '一个提示',
+      content: '一个内容',
+    },
+    normalButton: {
+      content: '一个按钮',
+      freezeObject: freezeObject,
+      normalObject: {
+        content: 'updateNormal'
+      }
+    },
+    todoItems: [{
+        id: 0,
+        text: '蔬菜'
+      },
+      {
+        id: 1,
+        text: '奶酪'
+      },
+      {
+        id: 2,
+        text: '随便其它什么人吃的东西'
+      }
+    ]
+  };
 
   export default {
     name: 'app',
@@ -40,38 +70,19 @@
       HelloWorld,
       TitleDate,
       NormalButton,
-      'todo-item': 'todoItem',
     },
     data() {
-      return {
-        helloWorld: {
-          message: 'Save you from anything'
-        },
-        titleDate: {
-          tip: '一个提示',
-          content: '一个内容',
-        },
-        normalButton: {
-          content: '一个按钮'
-        },
-        todoItems: [{
-            id: 0,
-            text: '蔬菜'
-          },
-          {
-            id: 1,
-            text: '奶酪'
-          },
-          {
-            id: 2,
-            text: '随便其它什么人吃的东西'
-          }
-        ]
-      }
+      return data;
     },
     methods: {
       onNormalButtonClick() {
         this.normalButton.content = this.normalButton.content.split('').reverse().join('')
+      },
+      onUpdateFreeze() {
+        this.normalButton.freezeObject.content = `${this.normalButton.freezeObject.content} *`
+      },
+      onUpdateNormal() {
+        this.normalButton.normalObject.content = `${this.normalButton.normalObject.content} ~`
       }
     }
   }

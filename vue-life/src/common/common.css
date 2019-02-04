@@ -1,4 +1,5 @@
 #text {
+    font-family: cursive;
     margin: 5px 5px 0px 5px;
     padding: 5px;
     color: cornflowerblue;
@@ -6,8 +7,15 @@
 }
 
 #button {
+    font-family: cursive;
     margin: 5px 5px 0px 5px;
     padding: 5px;
     font-size: 14px;
     color: cadetblue
+}
+
+#href {
+    font-family: cursive;
+    font-size: 14px;
+    color: crimson;
 }

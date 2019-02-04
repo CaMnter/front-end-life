@@ -24,6 +24,9 @@
       <dt>
         <div v-html="vHtml" />
       </dt>
+      <dt>
+        <a id="href" :href="homePage">「CaMnter」homePage</a>
+      </dt>
     </dl>
 
   </div>
@@ -68,8 +71,9 @@
         text: '随便其它什么人吃的东西'
       }
     ],
-    vOnce:'CaMnter',
-    vHtml:'<div id="text" style="color: red">「v-html」: CaMnter</div>'
+    vOnce: 'CaMnter',
+    vHtml: '<div id="text" style="color: red">「v-html」: CaMnter</div>',
+    homePage: 'https://www.camnter.com'
   };
 
   export default {

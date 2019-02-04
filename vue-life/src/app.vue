@@ -27,6 +27,12 @@
       <dt>
         <a id="href" :href="homePage">「CaMnter」homePage</a>
       </dt>
+      <dt>
+        <div id="text">「computedValue」: {{ computedValue }}</div>
+      </dt>
+      <dt>
+        <div id="text">「watchedValue」: {{ watchedValue }}</div>
+      </dt>
     </dl>
 
   </div>
@@ -73,7 +79,9 @@
     ],
     vOnce: 'CaMnter',
     vHtml: '<div id="text" style="color: red">「v-html」: CaMnter</div>',
-    homePage: 'https://www.camnter.com'
+    homePage: 'https://www.camnter.com',
+    value: 2333,
+    watchedValue: 0,
   };
 
   export default {
@@ -83,8 +91,25 @@
       TitleDate,
       NormalButton,
     },
+    created: function () {
+      setTimeout(() => {
+        this.value = 2333333
+      }, 2333);
+    },
     data() {
       return data;
+    },
+    computed: {
+      computedValue: function () {
+        console.log('「app」「computedValue」', this.value)
+        return `computedValue ${this.value}`
+      }
+    },
+    watch: {
+      value: function (newValue, oldValue) {
+        console.log('「app」「watch」「value」', newValue, oldValue)
+        this.watchedValue = `watched ${newValue}`
+      }
     },
     methods: {
       onNormalButtonClick() {
@@ -96,6 +121,6 @@
       onUpdateNormal() {
         this.normalButton.normalObject.content = `${this.normalButton.normalObject.content} ~`
       }
-    }
+    },
   }
 </script>

@@ -10,20 +10,28 @@ import App from './app.vue';
 Vue.config.devtools = true;
 Vue.config.productionTip = false;
 
-var obj = {
+var targetData = {
   foo: 'bar'
 }
 
-Object.freeze(obj)
+Object.freeze(targetData)
 
-new Vue({
+const vm = new Vue({
   el: '#app',
-  data: obj,
+  data: targetData,
   created: function () { },
   beforeCreate: () => { },
   render: h => {
-    let a = h(App);
-    console.log('VNode', a);
-    return a
+    let VNode = h(App);
+    console.log('「main」「VNode」', VNode);
+    return VNode
   },
 }).$mount('#app');
+
+// 获取 dom
+const dom = vm.$el;
+// 获取 data
+const data = vm.$data;
+
+console.log('「main」「dom」', dom);
+console.log('「main」「data」', data);

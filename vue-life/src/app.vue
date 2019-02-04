@@ -18,6 +18,12 @@
         <normal-button :content="normalButton.freezeObject.content" :click="onUpdateFreeze" />
         <normal-button :content="normalButton.normalObject.content" :click="onUpdateNormal" />
       </dt>
+      <dt>
+        <div id="text" v-once>「v-once」: {{ vOnce }}</div>
+      </dt>
+      <dt>
+        <div v-html="vHtml" />
+      </dt>
     </dl>
 
   </div>
@@ -61,7 +67,9 @@
         id: 2,
         text: '随便其它什么人吃的东西'
       }
-    ]
+    ],
+    vOnce:'CaMnter',
+    vHtml:'<div id="text" style="color: red">「v-html」: CaMnter</div>'
   };
 
   export default {

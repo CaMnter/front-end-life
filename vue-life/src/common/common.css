@@ -6,6 +6,18 @@
     font-size: 14px;
 }
 
+.text {
+    font-family: cursive;
+    margin: 5px 5px 0px 5px;
+    padding: 5px;
+    color: cornflowerblue;
+    font-size: 14px;
+}
+
+.chocolate {
+    color: chocolate
+}
+
 #button {
     font-family: cursive;
     margin: 5px 5px 0px 5px;

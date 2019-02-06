@@ -33,6 +33,15 @@
       <dt>
         <div id="text">「watchedValue」: {{ watchedValue }}</div>
       </dt>
+      <dt>
+        <div :class="computedBindClass">「bind:class」: computedBindClass</div>
+      </dt>
+      <dt>
+        <div :class="computedBindClassArray">「bind:class」「array」: computedBindClassArray</div>
+      </dt>
+      <dt>
+        <div :style="computedBindStyle">「bind:style」: computedBindStyle</div>
+      </dt>
     </dl>
 
   </div>
@@ -101,12 +110,31 @@
     },
     computed: {
       computedValue: function () {
+        // eslint-disable-next-line
         console.log('「app」「computedValue」', this.value)
         return `computedValue ${this.value}`
-      }
+      },
+      computedBindClass: function () {
+        return {
+          text: true
+        }
+      },
+      computedBindClassArray: function () {
+        return ['text', 'chocolate']
+      },
+      computedBindStyle: function () {
+        return {
+          'font-family': 'cursive',
+          'margin': ' 5px 5px 0px 5px',
+          'padding': '5px',
+          'color': 'cornflowerblue',
+          'font-size': '14px',
+        }
+      },
     },
     watch: {
       value: function (newValue, oldValue) {
+        // eslint-disable-next-line
         console.log('「app」「watch」「value」', newValue, oldValue)
         this.watchedValue = `watched ${newValue}`
       }

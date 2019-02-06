@@ -1,5 +1,4 @@
 @import './common/common.css';
-
 #app {
     font-family: cursive;
     -webkit-font-smoothing: antialiased;
@@ -7,4 +6,11 @@
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
+}
+
+#key_layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
 }

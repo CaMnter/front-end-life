@@ -42,6 +42,32 @@
       <dt>
         <div :style="computedBindStyle">「bind:style」: computedBindStyle</div>
       </dt>
+      <dt>
+        <div id="base_flex_row_start_start" style="justify-content: center">
+          <template v-if="loginType === 'user'">
+            <label id="text">User</label>
+            <input style='margin-top: 10px' placeholder="Enter your username">
+          </template>
+          <template v-else>
+            <label id="text">Email</label>
+            <input style='margin-top: 10px' placeholder="Enter your email address">
+          </template>
+          <normal-button :content="keySwitchButton.content" :click="loginTypeSwitchButtonClick" />
+        </div>
+      </dt>
+      <dt>
+        <div id="base_flex_row_start_start" style="justify-content: center">
+          <template v-if="keyLoginType === 'user'">
+            <label id="text">User</label>
+            <input style='margin-top: 10px' placeholder="Enter your username" key="user">
+          </template>
+          <template v-else>
+            <label id="text">Email</label>
+            <input style='margin-top: 10px' placeholder="Enter your email address" key="email">
+          </template>
+          <normal-button :content="keySwitchButton.content" :click="keyLoginTypeSwitchButtonClick" />
+        </div>
+      </dt>
     </dl>
 
   </div>
@@ -55,6 +81,9 @@
   const freezeObject = {
     content: 'updateFreeze'
   }
+
+  const LOGIN_TYPE_USER = 'user'
+  const LOGIN_TYPE_EMAIL = 'email'
 
   Object.freeze(freezeObject);
 
@@ -72,6 +101,9 @@
       normalObject: {
         content: 'updateNormal'
       }
+    },
+    keySwitchButton: {
+      content: 'swtich',
     },
     todoItems: [{
         id: 0,
@@ -91,6 +123,8 @@
     homePage: 'https://www.camnter.com',
     value: 2333,
     watchedValue: 0,
+    loginType: LOGIN_TYPE_USER,
+    keyLoginType: LOGIN_TYPE_USER
   };
 
   export default {
@@ -148,6 +182,30 @@
       },
       onUpdateNormal() {
         this.normalButton.normalObject.content = `${this.normalButton.normalObject.content} ~`
+      },
+      loginTypeSwitchButtonClick() {
+        switch (this.loginType) {
+          case LOGIN_TYPE_USER:
+            this.loginType = LOGIN_TYPE_EMAIL
+            break;
+          case LOGIN_TYPE_EMAIL:
+            this.loginType = LOGIN_TYPE_USER
+            break;
+          default:
+            break;
+        }
+      },
+      keyLoginTypeSwitchButtonClick() {
+        switch (this.keyLoginType) {
+          case LOGIN_TYPE_USER:
+            this.keyLoginType = LOGIN_TYPE_EMAIL
+            break;
+          case LOGIN_TYPE_EMAIL:
+            this.keyLoginType = LOGIN_TYPE_USER
+            break;
+          default:
+            break;
+        }
       }
     },
   }

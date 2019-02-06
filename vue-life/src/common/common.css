@@ -33,3 +33,17 @@
     padding: 5px;
     color: crimson;
 }
+
+#base_flex_row_start_start {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#base_flex_column_start_start {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}

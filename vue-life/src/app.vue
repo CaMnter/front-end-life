@@ -74,6 +74,9 @@
       <dt v-for="(value, key, index) in vForObject" :key="index">
         <div id="text">{{index}}. {{key}}: {{value}}</div>
       </dt>
+      <dt v-for="(value, key, index) in computedVForData" :key="index">
+        <div id="text">{{index}}. {{key}}: {{value}}</div>
+      </dt>
     </dl>
 
   </div>
@@ -180,6 +183,11 @@
           'color': 'cornflowerblue',
           'font-size': '14px',
         }
+      },
+      computedVForData: function () {
+        return this.vForData.map((value,  index) => {
+          return `computedVForData-${value}`;
+        });
       },
     },
     watch: {

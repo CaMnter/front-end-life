@@ -68,6 +68,12 @@
           <normal-button :content="keySwitchButton.content" :click="keyLoginTypeSwitchButtonClick" />
         </div>
       </dt>
+      <dt v-for="(item, index) in vForData" :key="index">
+        <div id="text">{{item}}</div>
+      </dt>
+      <dt v-for="(value, key, index) in vForObject" :key="index">
+        <div id="text">{{index}}. {{key}}: {{value}}</div>
+      </dt>
     </dl>
 
   </div>
@@ -106,17 +112,17 @@
       content: 'swtich',
     },
     todoItems: [{
-        id: 0,
-        text: '蔬菜'
-      },
-      {
-        id: 1,
-        text: '奶酪'
-      },
-      {
-        id: 2,
-        text: '随便其它什么人吃的东西'
-      }
+      id: 0,
+      text: '蔬菜'
+    },
+    {
+      id: 1,
+      text: '奶酪'
+    },
+    {
+      id: 2,
+      text: '随便其它什么人吃的东西'
+    }
     ],
     vOnce: 'CaMnter',
     vHtml: '<div id="text" style="color: red">「v-html」: CaMnter</div>',
@@ -124,7 +130,17 @@
     value: 2333,
     watchedValue: 0,
     loginType: LOGIN_TYPE_USER,
-    keyLoginType: LOGIN_TYPE_USER
+    keyLoginType: LOGIN_TYPE_USER,
+    vForData: [
+      '「v-for」one',
+      '「v-for」two',
+      '「v-for」three',
+    ],
+    vForObject: {
+      one: '「v-for object」',
+      two: '「v-for object」',
+      three: '「v-for object」',
+    }
   };
 
   export default {

@@ -88,6 +88,58 @@
           Submit
         </button>
       </dt>
+      <dt>
+        <div id="line">
+          <input v-model="inputMessage" placeholder="edit me">
+          Message is: {{ inputMessage }}
+        </div>
+        <div id="line">
+          <span>Multiline message is:</span>
+          <p style="white-space: pre-line;">{{ textareaMessage }}</p>
+          <textarea v-model="textareaMessage" placeholder="add multiple lines"></textarea>
+        </div>
+        <div id="line">
+          <input type="checkbox" id="checkbox" v-model="checked">
+          <label for="checkbox">{{ checked }}</label>
+        </div>
+        <div id="line">
+          <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+          <label for="jack">Jack</label>
+          <input type="checkbox" id="john" value="John" v-model="checkedNames">
+          <label for="john">John</label>
+          <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+          <label for="mike">Mike</label>
+          <br>
+          <span>Checked names: {{ checkedNames }}</span>
+        </div>
+        <div id="line">
+          <input type="radio" id="one" value="One" v-model="picked">
+          <label for="one">One</label>
+          <br>
+          <input type="radio" id="two" value="Two" v-model="picked">
+          <label for="two">Two</label>
+          <br>
+          <span>Picked: {{ picked }}</span>
+        </div>
+        <div id="line">
+          <select v-model="selected">
+            <option disabled value="">请选择</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+          </select>
+          <span>Selected: {{ selected }}</span>
+        </div>
+        <div id="line">
+          <select v-model="multipleSelected" multiple style="width: 50px;">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+          </select>
+          <br>
+          <span>Selected: {{ multipleSelected }}</span>
+        </div>
+      </dt>
     </dl>
 
   </div>
@@ -154,7 +206,14 @@
       one: '「v-for object」',
       two: '「v-for object」',
       three: '「v-for object」',
-    }
+    },
+    inputMessage: '',
+    textareaMessage: '',
+    checked: false,
+    checkedNames: [],
+    picked: '',
+    selected: '',
+    multipleSelected: '',
   };
 
   export default {

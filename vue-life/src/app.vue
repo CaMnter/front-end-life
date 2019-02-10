@@ -77,6 +77,17 @@
       <dt v-for="(value, key, index) in computedVForData" :key="index">
         <div id="text">{{index}}. {{key}}: {{value}}</div>
       </dt>
+      <dt>
+        <div id="line">
+          <button @click="say('hi')">Say hi</button>
+          <button @click="say('what')">Say what</button>
+        </div>
+      </dt>
+      <dt>
+        <button click="warn('Form cannot be submitted yet.', $event)">
+          Submit
+        </button>
+      </dt>
     </dl>
 
   </div>
@@ -185,7 +196,7 @@
         }
       },
       computedVForData: function () {
-        return this.vForData.map((value,  index) => {
+        return this.vForData.map(value => {
           return `computedVForData-${value}`;
         });
       },
@@ -230,7 +241,17 @@
           default:
             break;
         }
-      }
+      },
+      say(message) {
+        alert(message)
+      },
+      warn(message, event) {
+        // 原生事件
+        // eslint-disable-next-line
+        console.log('「app」「warn」', event)
+        if (event) event.stopPropagation()
+        alert(message)
+      },
     },
   }
 </script>

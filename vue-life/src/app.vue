@@ -140,6 +140,16 @@
           <span>Selected: {{ multipleSelected }}</span>
         </div>
       </dt>
+      <dt>
+        <div id="line">
+          <button @click="showTransition = !showTransition">
+            Toggle
+          </button>
+          <transition name="fade">
+            <div v-if="showTransition">transition</div>
+          </transition>
+        </div>
+      </dt>
     </dl>
 
   </div>
@@ -214,6 +224,7 @@
     picked: '',
     selected: '',
     multipleSelected: '',
+    showTransition: true
   };
 
   export default {

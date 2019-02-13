@@ -150,6 +150,16 @@
           </transition>
         </div>
       </dt>
+      <dt>
+        <div id="line">
+          <button @click="showCustomTransition = !showCustomTransition">
+            Toggle render
+          </button>
+          <transition name="slide-fade">
+            <div v-if="showCustomTransition">showCustomTransition</div>
+          </transition>
+        </div>
+      </dt>
     </dl>
 
   </div>
@@ -224,7 +234,8 @@
     picked: '',
     selected: '',
     multipleSelected: '',
-    showTransition: true
+    showTransition: true,
+    showCustomTransition: true
   };
 
   export default {

@@ -1,5 +1,6 @@
 <style>
   @import './app.css';
+  @import 'https://cdn.jsdelivr.net/npm/animate.css@3.5.1';
 </style>
 
 <template>
@@ -152,11 +153,19 @@
       </dt>
       <dt>
         <div id="line">
-          <button @click="showCustomTransition = !showCustomTransition">
+          <button @click="showSlideFade = !showSlideFade">
             Toggle render
           </button>
           <transition name="slide-fade">
-            <div v-if="showCustomTransition">showCustomTransition</div>
+            <div v-if="showSlideFade">showSlideFade</div>
+          </transition>
+        </div>
+      </dt>
+      <dt>
+        <div id="line">
+          <button @click="showBounce = !showBounce">Toggle bounce</button>
+          <transition name="bounce">
+            <div v-if="showBounce">showBounce</div>
           </transition>
         </div>
       </dt>
@@ -235,7 +244,8 @@
     selected: '',
     multipleSelected: '',
     showTransition: true,
-    showCustomTransition: true
+    showSlideFade: true,
+    showBounce: true
   };
 
   export default {

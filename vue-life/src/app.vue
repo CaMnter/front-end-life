@@ -169,6 +169,17 @@
           </transition>
         </div>
       </dt>
+      <dt>
+        <div id="line">
+          <button @click="showAnimateCss = !showAnimateCss">
+            Toggle animateCss
+          </button>
+          <transition name="custom-classes-transition" enter-active-class="animated tada"
+            leave-active-class="animated bounceOutRight">
+            <div v-if="showAnimateCss">showAnimateCss</div>
+          </transition>
+        </div>
+      </dt>
     </dl>
 
   </div>
@@ -245,7 +256,8 @@
     multipleSelected: '',
     showTransition: true,
     showSlideFade: true,
-    showBounce: true
+    showBounce: true,
+    showAnimateCss: true
   };
 
   export default {

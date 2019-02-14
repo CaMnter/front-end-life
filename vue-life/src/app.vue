@@ -175,7 +175,10 @@
             Toggle animateCss
           </button>
           <transition name="custom-classes-transition" enter-active-class="animated tada"
-            leave-active-class="animated bounceOutRight">
+            leave-active-class="animated bounceOutRight" @before-enter="beforeAnimateEnter" @enter="animateEnter"
+            @after-enter="afterAnimateEnter" v-on:enter-cancelled="enterAnimateCancelled"
+            @before-leave="beforeAnimateLeave" @leave="animateLeave" @after-leave="afterAnimateLeave"
+            @leave-cancelled="leaveAnimateCancelled">
             <div v-if="showAnimateCss">showAnimateCss</div>
           </transition>
         </div>
@@ -198,6 +201,51 @@
   const LOGIN_TYPE_EMAIL = 'email'
 
   Object.freeze(freezeObject);
+
+  const animateLifeCycle = {
+    beforeAnimateEnter: function (el) {
+      // ...
+      console.log('「beforeAnimateEnter」', el)
+    },
+    // 当与 CSS 结合使用时
+    // 回调函数 done 是可选的
+    animateEnter: function (el, done) {
+      // ...
+      console.log('「animateEnter」', el, done)
+    },
+    afterAnimateEnter: function (el) {
+      // ...
+      console.log('「afterAnimateEnter」', el)
+    },
+    enterAnimateCancelled: function (el) {
+      // ...
+      console.log('「enterAnimateCancelled」', el)
+    },
+
+    // --------
+    // 离开时
+    // --------
+
+    beforeAnimateLeave: function (el) {
+      // ...
+      console.log('「beforeAnimateLeave」', el)
+    },
+    // 当与 CSS 结合使用时
+    // 回调函数 done 是可选的
+    animateLeave: function (el, done) {
+      // ...
+      console.log('「animateLeave」', el, done)
+    },
+    afterAnimateLeave: function (el) {
+      // ...
+      console.log('「afterAnimateLeave」', el)
+    },
+    // leaveCancelled 只用于 v-show 中
+    leaveAnimateCancelled: function (el) {
+      // ...
+      console.log('「leaveAnimateCancelled」', el)
+    }
+  }
 
   const data = {
     helloWorld: {
@@ -312,6 +360,7 @@
       }
     },
     methods: {
+      ...animateLifeCycle,
       onNormalButtonClick() {
         this.normalButton.content = this.normalButton.content.split('').reverse().join('')
       },

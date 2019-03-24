@@ -183,6 +183,19 @@
           </transition>
         </div>
       </dt>
+      <dt>
+        <div id="line">
+          <div>
+            <button v-on:click="add">Add</button>
+            <button v-on:click="remove">Remove</button>
+            <transition-group name="list" tag="p">
+              <span v-for="item in items" v-bind:key="item" class="list-item">
+                {{ item }}
+              </span>
+            </transition-group>
+          </div>
+        </div>
+      </dt>
     </dl>
 
   </div>
@@ -204,21 +217,21 @@
 
   const animateLifeCycle = {
     beforeAnimateEnter: function (el) {
-      // ...
+      // eslint-disable-next-line
       console.log('「beforeAnimateEnter」', el)
     },
     // 当与 CSS 结合使用时
     // 回调函数 done 是可选的
     animateEnter: function (el, done) {
-      // ...
+      // eslint-disable-next-line
       console.log('「animateEnter」', el, done)
     },
     afterAnimateEnter: function (el) {
-      // ...
+      // eslint-disable-next-line
       console.log('「afterAnimateEnter」', el)
     },
     enterAnimateCancelled: function (el) {
-      // ...
+      // eslint-disable-next-line
       console.log('「enterAnimateCancelled」', el)
     },
 
@@ -227,24 +240,36 @@
     // --------
 
     beforeAnimateLeave: function (el) {
-      // ...
+      // eslint-disable-next-line
       console.log('「beforeAnimateLeave」', el)
     },
     // 当与 CSS 结合使用时
     // 回调函数 done 是可选的
     animateLeave: function (el, done) {
-      // ...
+      // eslint-disable-next-line
       console.log('「animateLeave」', el, done)
     },
     afterAnimateLeave: function (el) {
-      // ...
+      // eslint-disable-next-line
       console.log('「afterAnimateLeave」', el)
     },
     // leaveCancelled 只用于 v-show 中
     leaveAnimateCancelled: function (el) {
-      // ...
+      // eslint-disable-next-line
       console.log('「leaveAnimateCancelled」', el)
     }
+  }
+
+  const listAnimation = {
+    randomIndex: function () {
+      return Math.floor(Math.random() * this.items.length)
+    },
+    add: function () {
+      this.items.splice(this.randomIndex(), 0, this.nextNum++)
+    },
+    remove: function () {
+      this.items.splice(this.randomIndex(), 1)
+    },
   }
 
   const data = {
@@ -266,17 +291,17 @@
       content: 'swtich',
     },
     todoItems: [{
-      id: 0,
-      text: '蔬菜'
-    },
-    {
-      id: 1,
-      text: '奶酪'
-    },
-    {
-      id: 2,
-      text: '随便其它什么人吃的东西'
-    }
+        id: 0,
+        text: '蔬菜'
+      },
+      {
+        id: 1,
+        text: '奶酪'
+      },
+      {
+        id: 2,
+        text: '随便其它什么人吃的东西'
+      }
     ],
     vOnce: 'CaMnter',
     vHtml: '<div id="text" style="color: red">「v-html」: CaMnter</div>',
@@ -305,7 +330,10 @@
     showTransition: true,
     showSlideFade: true,
     showBounce: true,
-    showAnimateCss: true
+    showAnimateCss: true,
+
+    items: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    nextNum: 10
   };
 
   export default {
@@ -361,6 +389,7 @@
     },
     methods: {
       ...animateLifeCycle,
+      ...listAnimation,
       onNormalButtonClick() {
         this.normalButton.content = this.normalButton.content.split('').reverse().join('')
       },

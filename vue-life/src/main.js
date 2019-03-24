@@ -19,8 +19,8 @@ Object.freeze(targetData)
 const vm = new Vue({
   el: '#app',
   data: targetData,
-  created: function () { },
-  beforeCreate: () => { },
+  created: function () {},
+  beforeCreate: () => {},
   render: h => {
     let VNode = h(App);
     console.log('「main」「VNode」', VNode);

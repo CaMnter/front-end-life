@@ -80,3 +80,21 @@ v-leave-to: 2.1.8版及以上 定义离开过渡的结束状态。在离开过�
         transform: scale(1);
     }
 }
+
+.list-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.list-enter-active,
+.list-leave-active {
+    transition: all 1s;
+}
+
+/* .list-leave-active for below version 2.1.8 */
+
+.list-enter,
+.list-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+}
